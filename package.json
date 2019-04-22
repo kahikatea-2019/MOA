@@ -2,8 +2,8 @@
   "name": "edamame",
   "version": "0.1.0",
   "main": "server/index.js",
-  "repository": "https://github.com/harakeke-2019/edamame.git",
-  "bugs": "https://github.com/harakeke-2019/edamame/issues",
+  "repository": "https://github.com/kahikatea-2019/moa.git",
+  "bugs": "https://github.com/kahikatea-2019/moa/issues",
   "author": "EDA",
   "license": "ISC",
   "scripts": {
