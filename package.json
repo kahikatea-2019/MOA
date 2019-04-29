@@ -7,12 +7,14 @@
   "author": "EDA",
   "license": "ISC",
   "scripts": {
-    "start": "webpack && node server",
-    "dev": "nodemon server & webpack --watch",
+    "start": "npx npm-run-all --parallel start:*",
+    "start:client": "webpack",
+    "start:server": "node server",
+    "dev": "npx npm-run-all --parallel dev:*",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon server",
     "client": "webpack-dev-server --hot --inline",
     "server": "node server",
-    "knex": "knex --knexfile ./server/db/knexfile.js",
-    "updateDb": "rm dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run",
     "test": "jest --watchAll"
   },
   "babel": {
@@ -50,6 +52,7 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "jest": "^24.7.1",
     "nodemon": "^1.18.11",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
