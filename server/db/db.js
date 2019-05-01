@@ -10,7 +10,3 @@ getUser
 function getUsers (db = connection) {
   return db('users').select
 }
-
-function getUser (id, db = connection) {
-  return 
-}
