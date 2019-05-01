@@ -1,8 +1,13 @@
 import React from 'react'
 
+import DropDownModule from './DropDownModule'
+
 const App = () => {
   return (
-    <h1>MOA development has begun!</h1>
+    <React.Fragment>
+      <h1>MOA development has begun!</h1>
+      <DropDownModule />
+    </React.Fragment>
   )
 }
 
