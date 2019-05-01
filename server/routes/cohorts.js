@@ -4,7 +4,7 @@ const db = require('../db/cohorts')
 
 const router = express.Router()
 
-router.get('/cohorts', (req, res) => {
+router.get('/', (req, res) => {
   db.getCohorts()
     .then(cohorts => {
       res.render('index', { cohorts: cohorts })
