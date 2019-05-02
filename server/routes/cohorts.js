@@ -5,7 +5,7 @@ const db = require('../db/cohorts.js')
 router.get('/:id', (req, res) => {
   const id = req.params.id
   db.getCohort(id)
-    .then(cohort => res.render('cohorts', cohort))
+    .then(cohort => res.send('cohorts', cohort))
     .catch(err => res.status(500).send(err.message))
 })
 
