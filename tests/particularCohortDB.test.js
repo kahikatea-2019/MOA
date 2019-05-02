@@ -25,7 +25,7 @@ test('getCohort returns an individual cohort', () => {
     campus: 'Hamilton'
   } ]
 
-  return db.getCohort(cohorts[0].id, cohorts)
+  return db.getCohort(1, cohorts)
     .then(cohorts => {
       expect(cohorts.name).toBe('Kahikatea')
     })

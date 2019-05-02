@@ -6,7 +6,7 @@ module.exports = {
   getCohort
 }
 
-function getCohort (id, db = connection) {
+function getCohort (id, db = connection || testDb ) {
   return db('cohorts')
     .where('id', id)
     .first()
