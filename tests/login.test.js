@@ -7,7 +7,7 @@ test('test harness is set up correctly', () => {
   expect(true).toBe(true)
 })
 
-test('Login returns a <input>', () => {
+test('Login renders a <input>', () => {
   request(server)
     .get('/')
     .expect(200)
@@ -18,7 +18,7 @@ test('Login returns a <input>', () => {
       expect(inputLength).toBe(2)
     })
 })
-test('Login returns a <p>', () => {
+test('Login renders a <p>', () => {
   request(server)
     .get('/')
     .expect(200)

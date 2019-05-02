@@ -1,7 +1,4 @@
 import React from 'react'
-// const isAuthenticated = () => true
-// we will import login from authenticare
-// import { logIn, isAuthenticated } from 'authenticare/client'
 
 export default class Login extends React.Component {
   state = {
@@ -18,19 +15,8 @@ export default class Login extends React.Component {
 
  handleClick = e => {
    e.preventDefault()
- 
  }
- 
- 
- //   , {
- //     baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
- //   })
- //     .then((token) => {
- //       if (isAuthenticated()) {
- //         props.history.push('/')
- //       }
- //     })
- // }
+
  render () {
    return (
      <React.Fragment>
