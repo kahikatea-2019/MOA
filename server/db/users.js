@@ -6,7 +6,7 @@ module.exports = {
   createUser
 }
 
-function createUser ({ name, surname, role, email, password }, db = connection) {
+function createUser ({ first_name, last_name, email, password, role }, db = connection) {
   return generateHash(password)
-    .then(hash => db('users').insert({ name, surname, role, email, hash }))
+    .then(hash => db('users').insert({ first_name, last_name, email, hash, role }))
 }

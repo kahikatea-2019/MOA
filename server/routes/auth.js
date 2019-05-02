@@ -9,8 +9,8 @@ const router = express.Router()
 router.post('/register', register, token.issue)
 
 function register (req, res, next) {
-  const { name, surname, role, email, password } = req.body
-  createUser({ name, surname, role, email, password })
+  const { first_name, last_name, email, password, role }= req.body
+  createUser({ first_name, last_name, email, password, role })
     .then(([id]) => {
       res.locals.userId = id
       next()
