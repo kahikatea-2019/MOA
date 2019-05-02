@@ -1,22 +1,26 @@
 const express = require('express')
 
+const { createUser } = require('../db/users')
+const token = require('../auth/token')
+
 const router = express.Router()
 
-const { createUser } = require('../db/users')
-
 // Register user route at /api/v1/auth/register
-router.post('/register', register)
+router.post('/register', register, token.issue)
 
-function register (req, res) {
+function register (req, res, next) {
   const { name, surname, role, email, password } = req.body
   createUser({ name, surname, role, password })
-    .then(() => res.status(201).json({ ok: true }))
+    .then(([id]) => {
+      res.locals.userId = id
+      next()
+    })
     .catch(({ message }) => {
       // note that message is used with SQLite, but if db is changed this may need to be updated
       if (message.includes('UNIQUE constraint failed: users.email')) {
         return res.status(400).json({
           ok: false,
-          message: 'User already exists.'
+          message: 'Email already exists in database.'
         })
       }
       res.status(500).json({
@@ -24,8 +28,6 @@ function register (req, res) {
         message: "Something bad happened. We don't know why."
       })
     })
-
-  // TODO: if not, hash the password and add the user to the database
 }
 
 module.exports = router
