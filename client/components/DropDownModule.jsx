@@ -4,8 +4,8 @@ export default class DropDownModule extends React.Component {
   state = {
     module: [
       {
-        'moduleId': 1,
-        'moduleTitle': 'Module 1: Core Programming',
+        moduleId: 1,
+        moduleTitle: 'Module 1: Core Programming',
         'assessmentsId': 1,
         'assessmentsTitle': '1. Use Git and terminal commands to manage a code base',
         'description': 'desc',
@@ -28,18 +28,21 @@ export default class DropDownModule extends React.Component {
     ]
   }
 
-  moduleName = this.state.module.map(item => {
-    return <li>{item.moduleTitle}</li>
-  })
+  // module1Data = state.module.filter(assessment => {
+  // if (assessment.moduleId === moduleId)
+  // })
 
-  render () {
-    return (
-      <div>
-        <ul>
-          <li>{this.moduleName}</li>
-        </ul>
-      </div>
-    )
-  }
+    module1Ex = this.state.module.map(assessment => {
+      return <li>{assessment.exerciseTitle}</li>
+    })
+
+    render () {
+      return (
+        <div>
+          <ul>
+            {this.module1Ex}
+          </ul>
+        </div>
+      )
+    }
 }
-

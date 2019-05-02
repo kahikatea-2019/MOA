@@ -5,9 +5,12 @@ import DropDownModule from './DropDownModule'
 
 const App = () => {
   return (
+
     <Router>
+      <DropDownModule />
       <Switch>
         <h1>MOA development has begun!</h1>
+
       </Switch>
     </Router>
   )
