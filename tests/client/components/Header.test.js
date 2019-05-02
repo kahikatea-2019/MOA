@@ -3,8 +3,22 @@ import {shallow} from 'enzyme'
 import Header from '../../../client/components/Header'
 
 test('<Header/>', () => {
-    const expected = 'NameSurnameHarakeke2019'
+    const expected = 'name'
     const wrapper = shallow(<Header />)
     expect(wrapper.text()).toBe(expected)
 })
+
+
+test('<Header/>', () => {
+    const expected = 'surname'
+    const wrapper = shallow(<Header />)
+    expect(wrapper.text()).toBe(expected)
+})
+
+test('<Header/>', () => {
+    const expected = 'cohort'
+    const wrapper = shallow(<Header />)
+    expect(wrapper.text()).toBe(expected)
+})
+
 
