@@ -1,13 +1,15 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import DropDownModule from './DropDownModule'
 
 const App = () => {
   return (
-    <React.Fragment>
-      <h1>MOA development has begun!</h1>
-      <DropDownModule />
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <h1>MOA development has begun!</h1>
+      </Switch>
+    </Router>
   )
 }
 
