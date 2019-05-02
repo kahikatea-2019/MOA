@@ -1,7 +1,7 @@
 const request = require('supertest')
 // const cheerio = require('cheerio')
 
-const server = require('../routes')
+const server = require('../../server/routes')
 const db = require('../db/cohorts.test')
 
 beforeEach(() => {
