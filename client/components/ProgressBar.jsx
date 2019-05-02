@@ -27,7 +27,7 @@ class ProgressBar extends React.Component {
           'link': 'link',
           'week_day': 'weekday',
           'student_id': 1,
-          'assessment_id': 1,
+          'assessment_id': 2,
           'status_id': 3,
           'evidence': 'evidence',
           'date_modified': '2019-02-24 22:55:20'
@@ -40,7 +40,7 @@ class ProgressBar extends React.Component {
           'link': 'link',
           'week_day': 'weekday',
           'student_id': 1,
-          'assessment_id': 2,
+          'assessment_id': 3,
           'status_id': 4,
           'evidence': 'evidence',
           'date_modified': '2019-02-24 22:55:20'
@@ -53,7 +53,7 @@ class ProgressBar extends React.Component {
           'link': 'link',
           'week_day': 'weekday',
           'student_id': 1,
-          'assessment_id': 3,
+          'assessment_id': 4,
           'status_id': 1,
           'evidence': 'evidence',
           'date_modified': '2019-02-24 22:55:20'
@@ -61,17 +61,20 @@ class ProgressBar extends React.Component {
       ]
   }
 
-newArr = this.state.map(item => {
-  return item.status_id
-})
-// <p>{state.name}}<p>
-// <p>Emily<p>
+  statusArr = this.state.map(assessment => {
+    return assessment.status_id
+  })
 
-render () {
-  return (
-    <p>{this.newArr}</p>
-  )
-}
+  render () {
+    return (
+    <>
+    <div className= 'progressBar'>
+      <p>hi hi hi</p>
+    </div>
+    </>
+
+    )
+  }
 }
 
 export default ProgressBar
