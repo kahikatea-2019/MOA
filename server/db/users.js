@@ -1,6 +1,6 @@
-const connection = import('./connection')
+const connection = require('./connection')
 
-const { generateHash } = import('../auth/hash')
+const { generateHash } = require('../auth/hash')
 
 module.exports = {
   createUser
