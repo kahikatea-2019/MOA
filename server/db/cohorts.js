@@ -7,5 +7,7 @@ module.exports = {
 }
 
 function getCohort (id, db = connection) {
-  return db('cohorts').where('id', id).first()
+  return db('cohorts')
+    .where('id', id)
+    .first()
 }

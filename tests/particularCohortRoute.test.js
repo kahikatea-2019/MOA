@@ -3,7 +3,7 @@ const cheerio = require('cheerio')
 
 const server = require('../server/server.js')
 
-test('/cohorts/:id returns an individual cohort', () => {
+test('/cohorts/:id sends back a 200 status', () => {
   request(server)
     .get('/cohorts/:id')
     .expect(200)
