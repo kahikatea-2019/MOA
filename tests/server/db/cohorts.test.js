@@ -1,17 +1,19 @@
-const request = require('supertest')
-// const cheerio = require('cheerio')
+require('babel-polyfill')
+const env = require('./test-environment')
+const db = require('../../../server/db/cohorts')
 
-const server = require('../db')
+let testDb = null
 
-test('test cohorts is setup correctly', () => {
-  expect(true).toBe(true)
+beforeEach(() => {
+  testDb = env.getTestDb()
+  return env.initialise(testDb)
 })
 
+afterEach(() => env.cleanup(testDb))
+
 test('getCohorts returns a list of all cohorts', () => {
-  request(server)
-    .get('/')
-    .expect(200)
-    .end((err, res) => {
-      expect(err).toBeNull()
+  return db.getCohorts(testDb)
+    .then(cohorts => {
+      expect(cohorts.length).toBe()
     })
 })
