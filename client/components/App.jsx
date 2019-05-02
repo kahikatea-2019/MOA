@@ -1,8 +1,12 @@
 import React from 'react'
+import Login from './Login'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <h1>MOA development has begun!</h1>
+    <Router>
+      <Route path='/' component ={Login} />
+    </Router>
   )
 }
 
