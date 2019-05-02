@@ -16,7 +16,7 @@ onChange = (e) => {
 }
 
 handleClick = () => {
-
+// register button should link to register path
 }
 
 render () {
