@@ -22,6 +22,7 @@ handleClick = () => {
 render () {
   return (
     <>
+    <div className='register'>
       <input name='first_name'
         placeholder='First Name'
         value={this.state.first_name}
@@ -45,21 +46,23 @@ render () {
       />
       <br/>
 
-      <input name='role'
-        placeholder='Role'
-        value={this.state.role}
-        onChange={e => this.onChange(e)}
-      />
-      <br/>
-
-      <input name='cohorts'
-        placeholder='Cohorts'
+      <input name='email'
+        placeholder='Email'
         value={this.state.cohorts}
         onChange={e => this.onChange(e)}
       />
       <br/>
-      <button type='button' onClick={() => this.handleClick()}>Register</button>
 
+      <label>
+        <select name='role' onChange={e => this.onChange(e)}>
+          <option value='Facilitator'>Facilitator</option>
+          <option value='Student'>Student</option>
+        </select>
+      </label>
+      <br/>
+
+      <button type='button' onClick={() => this.handleClick()}>Register</button>
+    </div>
     </>
 
   )
