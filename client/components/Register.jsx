@@ -48,7 +48,7 @@ render () {
 
       <input name='email'
         placeholder='Email'
-        value={this.state.cohorts}
+        value={this.state.email}
         onChange={e => this.onChange(e)}
       />
       <br/>
