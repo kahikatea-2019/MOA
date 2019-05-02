@@ -1,8 +1,14 @@
 import React from 'react'
+import Register from './Register'
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <h1>MOA development has begun!</h1>
+    <Router>
+      <h1>MOA development has begun!</h1>
+      <Route path='/register' component={Register} />
+    </Router>
   )
 }
 
