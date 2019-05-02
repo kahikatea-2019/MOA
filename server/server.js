@@ -10,6 +10,6 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
 server.use('/', starterRoute)
-server.use('/assessments', assessmentsRoute)
+server.use('/v1/assessments', assessmentsRoute)
 
 module.exports = server
