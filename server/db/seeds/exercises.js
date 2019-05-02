@@ -27,7 +27,7 @@ exports.seed = function (knex, Promise) {
         {id: 21, assessment_id: 21, title: 'observation'},
         {id: 22, assessment_id: 22, title: 'observation'},
         {id: 23, assessment_id: 23, title: 'deep dive with human skills facilitator'},
-        {id: 24, assessment_id: 24, title: 'observation'},
+        {id: 24, assessment_id: 24, title: 'observation'}
       ])
     })
 }
