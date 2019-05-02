@@ -43,6 +43,7 @@
     "knex": "^0.16.5",
     "libsodium-wrappers": "^0.7.4",
     "path": "^0.12.7",
+    "react-router-dom": "^5.0.0",
     "sqlite3": "^4.0.6",
     "superagent": "^5.0.4",
     "supertest": "^4.0.2"
