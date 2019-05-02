@@ -4,9 +4,9 @@ export default class AddWidget extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            name: 'Eteroa',
-            surname: ' Lafaele',
-            cohort: 'SWOOOOOP 2019'
+            name: '',
+            surname: ' ',
+            cohort: ''
         }
     }
 

@@ -5,7 +5,6 @@ import Header from './Header'
 const App = () => {
   return (
     <Router>
-      <Header/>
       <Switch>
         <h1>MOA development has begun!</h1>      
       </Switch>
