@@ -1,5 +1,5 @@
 const request = require('supertest')
-const cheerio = require('cheerio')
+// const cheerio = require('cheerio')
 
 const server = require('../db')
 
