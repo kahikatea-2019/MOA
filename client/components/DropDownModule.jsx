@@ -15,7 +15,7 @@ export default class DropDownModule extends React.Component {
         'exerciseTitle': 'https://github.com/dev-academy-challenges/taxonomic-routing'
       },
       {
-        'moduleId': 1,
+        'moduleId': 2,
         'moduleTitle': 'Module 1: Core Programming',
         'assessmentsId': 2,
         'assessmentsTitle': '2. Use npm to manage library dependencies',
