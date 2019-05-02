@@ -10,7 +10,7 @@ router.post('/register', register, token.issue)
 
 function register (req, res, next) {
   const { name, surname, role, email, password } = req.body
-  createUser({ name, surname, role, password })
+  createUser({ name, surname, role, email, password })
     .then(([id]) => {
       res.locals.userId = id
       next()
