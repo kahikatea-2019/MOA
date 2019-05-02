@@ -1,18 +1,12 @@
+require('babel-polyfill')
 const request = require('supertest')
-// const cheerio = require('cheerio')
 
-const server = require('../../server/routes')
-const db = require('../db/cohorts.test')
+const server = require('../../../server/routes/cohorts')
 
-beforeEach(() => {
-  db.reset()
-})
-
-test('GET / returns cohorts', () => {
+test('GET /cohorts returns all cohorts', () => {
   request(server)
-    .get('/')
-    .expect(200)
-    .end((err, res) => {
-      expect(err).toBeNull()
+    .get('/cohorts')
+    .then(res => {
+      expect(res.body.name).toHaveLength()
     })
 })

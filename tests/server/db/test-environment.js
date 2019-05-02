@@ -4,7 +4,7 @@ const testConfig = require('../../../server/db/knexfile').test
 
 module.exports = {
 
-  getCohortsTest: () => getDbConn(testConfig),
+  getTestDb: () => getDbConn(testConfig),
 
   initialise: (db) => {
     return db.migrate.latest()
