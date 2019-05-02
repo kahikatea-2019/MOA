@@ -5,9 +5,9 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('table_name').insert([
         {id: 1, name: 'not started'},
-        {id: 1, name: 'in progress'},
-        {id: 1, name: 'done - awaiting review'},
-        {id: 1, name: 'completed'}
+        {id: 2, name: 'in progress'},
+        {id: 3, name: 'done - awaiting review'},
+        {id: 4, name: 'completed'}
       ])
     })
 }
