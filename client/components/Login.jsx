@@ -1,54 +1,57 @@
-import React, { useState } from 'react'
+import React from 'react'
 // const isAuthenticated = () => true
-const logIn = () => {} // we will import login from authenticare
+// we will import login from authenticare
 // import { logIn, isAuthenticated } from 'authenticare/client'
 
-export default function Login (props) {
-  const [form, setForm] = useState({
+export default class Login extends React.Component {
+  state = {
     username: '',
     password: ''
-  })
-  const handleChange = e => {
-    setForm({
-      ...form,
+  }
+
+  handleChange = e => {
+    this.setState({
+
       [e.target.name]: e.target.value
     })
   }
 
-  const handleClick = () => {
-    logIn({
-      username: form.username,
-      password: form.password
-    }) // remove the ) when you add token
-  }
-  //   , {
-  //     baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
-  //   })
-  //     .then((token) => {
-  //       if (isAuthenticated()) {
-  //         props.history.push('/')
-  //       }
-  //     })
-  // }
-  return (
-    <React.Fragment>
-      <h1>Login</h1>
+ handleClick = e => {
+   e.preventDefault()
+ 
+ }
+ 
+ 
+ //   , {
+ //     baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
+ //   })
+ //     .then((token) => {
+ //       if (isAuthenticated()) {
+ //         props.history.push('/')
+ //       }
+ //     })
+ // }
+ render () {
+   return (
+     <React.Fragment>
+       <h1>Login</h1>
 
-      <p>Username:</p>
-      <input name='username'
-        value={form.username}
-        onChange={handleChange} />
+       <p>Username:</p>
+       <input name='username'
+         value={this.state.username}
+         onChange={this.handleChange} />
 
-      <p>Password:</p>
-      <input name='password' type='password'
-        value={form.password}
-        onChange={handleChange} />
-      <br/>
-      <br/>
-      <br/>
-      
-      <button type='button' onClick={handleClick}>Login</button>
+       <p>Password:</p>
+       <input name='password' type='password'
+         value={this.state.password}
+         onChange={this.handleChange} />
+       <br/>
+       <br/>
+       <br/>
 
-    </React.Fragment>
-  )
+       <button type='button' onClick={this.handleClick}>Login</button>
+
+     </React.Fragment>
+   )
+ }
 }
