@@ -3,7 +3,7 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getCohorts: getCohorts
+  getCohorts
 }
 
 function getCohorts (db = connection) {

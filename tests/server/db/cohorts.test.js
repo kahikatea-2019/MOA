@@ -14,6 +14,6 @@ afterEach(() => env.cleanup(testDb))
 test('getCohorts returns a list of all cohorts', () => {
   return db.getCohorts(testDb)
     .then(cohorts => {
-      expect(cohorts.length).toBe()
+      expect(cohorts.length).toBe(1)
     })
 })
