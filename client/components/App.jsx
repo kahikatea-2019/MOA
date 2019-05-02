@@ -1,12 +1,13 @@
 import React from 'react'
-import Header from './Header'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 const App = () => {
   return (
-    <React.Fragment>
-    <Header/>
-    <h1>MOA development has begun!</h1>
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <h1>MOA development has begun!</h1>
+      </Switch>
+    </Router>
   )
 }
 
