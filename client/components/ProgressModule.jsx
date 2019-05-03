@@ -61,15 +61,19 @@ export default class ProgressModule extends React.Component {
         moduleComplete: true
       })
     }
+    return progress
+  }
+
+  calculateProgress () {
+    this.getModule()
+      .then(console.log)
   }
 
 
   render() {
     return (
       <React.Fragment>
-
-      <p>{}</p>
-
+        <button onClick={() => this.calculateProgress()}>Hello I'm rendering</button>
       </React.Fragment>
     )
   }
