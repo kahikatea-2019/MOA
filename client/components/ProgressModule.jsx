@@ -18,25 +18,25 @@ export default class ProgressModule extends React.Component {
   }
 
   getAssesments (module_id) {
-    return (
+    return ([
       {id: 1, module_id: 1, title: '1. Use Git and terminal commands to manage a code base', description: 'desc', link: 'link', week_day: 'weekday'},
       {id: 2, module_id: 1, title: '2. Use npm to manage library dependencies', description: 'desc', link: 'link', week_day: 'weekday'},
       {id: 3, module_id: 1, title: '3. Create well structured and tested code using JavaScript ES6', description: 'desc', link: 'link', week_day: 'weekday'},
       {id: 4, module_id: 1, title: '4. Design, build and use a relational database to persist data', description: 'desc', link: 'link', week_day: 'weekday'},
       {id: 5, module_id: 1, title: '5. Create code which reads and writes to the filesystem', description: 'desc', link: 'link', week_day: 'weekday'},
       {id: 6, module_id: 1, title: '6. Build a Command Line Interface tool', description: 'desc', link: 'link', week_day: 'weekday'}
-    )
+    ])
   }
 
   getStudentsAssessments (assessment_id) {
-    return (
+    return ([
       {id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: 'date'},
       {id: 1, student_id: 1, assessment_id: 2, status_id: 3, evidence: 'evidence', date_modified: 'date'},
       {id: 1, student_id: 1, assessment_id: 3, status_id: 2, evidence: 'evidence', date_modified: 'date'},
       {id: 1, student_id: 1, assessment_id: 4, status_id: 1, evidence: 'evidence', date_modified: 'date'},
       {id: 1, student_id: 1, assessment_id: 5, status_id: 2, evidence: 'evidence', date_modified: 'date'},
       {id: 1, student_id: 1, assessment_id: 6, status_id: 1, evidence: 'evidence', date_modified: 'date'}
-    )
+    ])
   }
 
   getAssesmentStatus (status_id) { // Still mock data! Output decided by case statement
@@ -66,19 +66,28 @@ export default class ProgressModule extends React.Component {
       this.setState({
         moduleComplete: true
       })
+      // return (this.renderCheck())
     }
     return progress
   }
 
+  // renderCheck() {
+  //   return // elements for rendering check
+  // }
+
   calculateProgress () {
-    const input = this.getModule()
-    console.log(input)
+    const module = this.getModule()
+    const assessments = this.getAssesments(module.id)
+    const input =  assessments.find(assessment => {
+      assessment.id   
+    })
   }
 
   render () {
     return (
       <React.Fragment>
-        <button onClick={() => this.calculateProgress()}>Hello I'm rendering</button>
+        <button onClick={() => this.calculateProgress()}>Calculate Progress</button>
+        <h3>Module progress: {this.state.getProgress}</h3>
       </React.Fragment>
     )
   }
