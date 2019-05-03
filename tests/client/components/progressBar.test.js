@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ProgressBar from '../client/components/ProgressBar'
+import ProgressBar from '../../../client/components/ProgressBar'
 
 // Prevent <ProgressBar> from calling the API
 ProgressBar.prototype.componentDidMount = () => {}

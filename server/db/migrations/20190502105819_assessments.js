@@ -4,8 +4,6 @@ exports.up = (knex, Promise) => {
     table.integer('module_id').references('modules.id')
     table.string('title')
     table.string('description')
-    table.string('link')
-    table.string('week_day')
   })
 }
 
