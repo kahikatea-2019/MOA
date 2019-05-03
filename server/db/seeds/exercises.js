@@ -1,9 +1,9 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('exercises').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('exercises').insert([
         {id: 1, assessment_id: 1, titie: 'taxonomic-routing', link: 'https://github.com/dev-academy-challenges/taxonomic-routing'},
         {id: 2, assessment_id: 2, titie: 'knex-relationship-stories', link: 'https://github.com/dev-academy-challenges/knex-relationships-stories'},
         {id: 3, assessment_id: 3, titie: 'jwt-auth', link: 'https://github.com/dev-academy-challenges/jwt-auth'},
