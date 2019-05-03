@@ -12,8 +12,7 @@ router.put('/:id', (req, res) => {
   }
 
   db.submitAssessment(submission)
-    .then(submission => res.send('student_assessments', submission))
-    .then(res.json({ notice: 'Evidence has been updated!' }))
+    .then(() => res.json({ notice: 'Evidence has been updated!' }))
     .catch(err => res.status(500).send(err.message))
 })
 
