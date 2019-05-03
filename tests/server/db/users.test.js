@@ -1,6 +1,5 @@
-require('babel-polyfill')
 const env = require('./test-environment')
-const db = require('../../../server/db/db')
+const db = require('../../../server/db/users')
 
 let testDb = null
 
@@ -24,17 +23,3 @@ test('createUser adds a new user', () => {
       expect(id).toBe(3)
     })
 })
-
-// test('createUser stops you from adding duplicate emails', () => {
-//   const newUser = {
-//     first_name: 'Rose',
-//     last_name: 'Again',
-//     email: 'rose@gg.com',
-//     password: 'rose',
-//     role: 'Golden girl'
-//   }
-//   return db.createUser(newUser, testDb)
-//     .then(([id]) => {
-//       expect(id).toBe(3)
-//     })
-// })
