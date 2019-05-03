@@ -9,8 +9,8 @@ module.exports = {
 function submitAssessment (assessment, db = connection) {
   return db('student_assessments')
     .insert(JSON.stringify({
-      evidence: assessment.evidence,
+      studentId: assessment.studentId,
       date: assessment.date,
-      studentId: assessment.studentId
+      evidence: assessment.evidence
     }))
 }
