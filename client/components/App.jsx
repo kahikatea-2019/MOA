@@ -1,8 +1,8 @@
 import React from 'react'
-import Register from './Register'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Header from './Header'
+import Register from './Register'
 
 const App = () => {
   return (
