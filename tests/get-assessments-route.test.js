@@ -5,6 +5,7 @@ const server = require('../server/server')
 
 test('/assessments route sense back 200 status', () => {
   request(server)
+  // access GET route and expect connection
     .get('/assessments')
     .expect(200)
     .end((err, res) => {

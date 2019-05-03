@@ -6,6 +6,7 @@ module.exports = {
   getAssessments
 }
 
+// function to retrieve all 'assessments' data including joining assessments + modules tables
 function getAssessments (db = connection) {
   return db('assessments')
     .join('modules', 'modules.id', 'assessments.module_id')
