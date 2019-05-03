@@ -2,7 +2,7 @@ const express = require('express')
 
 const { createUser } = require('../db/users')
 const token = require('../auth/token')
-
+const hash = require('../auth/hash')
 const router = express.Router()
 
 // Register user route at /api/v1/auth/register
@@ -30,4 +30,29 @@ function register (req, res, next) {
     })
 }
 
+router.post('/sigIn', signIn, token.issue)
+
+function signIn (req, res, next) {
+  getUserByName(req.body.username)
+    .then(user => {
+      return user
+    })
+    .then(user => {
+      return user && hash.verify(user.hash, req.body.password)
+    })
+    .then(isValid => {
+      return isValid ? next() : invalidCredentials(res)
+    })
+    .catch((err) => {
+      res.status(400).send({
+        errorType: err.message
+      })
+    })
+}
+
+function invalidCredentials (res) {
+  res.status(400).send({
+    errorType: 'INVALID_CREDENTIALS'
+  })
+}
 module.exports = router
