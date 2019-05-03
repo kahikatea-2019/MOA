@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class Login extends React.Component {
   state = {
-    username: '',
+    email: '',
     password: ''
   }
 
@@ -21,20 +21,14 @@ export default class Login extends React.Component {
    return (
      <React.Fragment>
        <h1>Login</h1>
-
-       <p>Username:</p>
-       <input name='username'
-         value={this.state.username}
+       <p>Email:</p>
+       <input name='email'
+         value={this.state.email}
          onChange={this.handleChange} />
-
        <p>Password:</p>
        <input name='password' type='password'
          value={this.state.password}
          onChange={this.handleChange} />
-       <br/>
-       <br/>
-       <br/>
-
        <button type='button' onClick={this.handleClick}>Login</button>
 
      </React.Fragment>
