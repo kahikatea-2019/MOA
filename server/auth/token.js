@@ -8,8 +8,8 @@ function issue (req, res) {
   res.json({
     ok: true,
     message: 'Authentication successful.',
-    token: createToken(res.locals.userId),
-    userId: res.locals.userId
+    userId: res.locals.userId,
+    token: createToken(res.locals.userId)
   })
 }
 
