@@ -5,7 +5,9 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('students').insert([
         {id: 1, user_id: 2, cohort_id: 1},
-        {id: 1, user_id: 1, cohort_id: 1}
+        {id: 1, user_id: 1, cohort_id: 1},
+        {id: 1, user_id: 1, cohort_id: 2},
+        {id: 1, user_id: 2, cohort_id: 3}
       ])
     })
 }
