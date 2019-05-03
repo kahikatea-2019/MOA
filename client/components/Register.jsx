@@ -6,7 +6,7 @@ state = {
   last_name: '',
   password: '',
   role: '',
-  cohorts: ''
+  email: ''
 }
 
 onChange = (e) => {
@@ -55,8 +55,8 @@ render () {
 
       <label>
         <select name='role' onChange={e => this.onChange(e)}>
-          <option value='Facilitator'>Facilitator</option>
-          <option value='Student'>Student</option>
+          <option value='facilitator'>Facilitator</option>
+          <option value='student'>Student</option>
         </select>
       </label>
       <br/>
