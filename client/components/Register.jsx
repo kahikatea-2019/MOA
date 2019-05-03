@@ -2,8 +2,8 @@ import React from 'react'
 
 class Register extends React.Component {
 state = {
-  first_name: '',
-  last_name: '',
+  firstName: '',
+  lastName: '',
   password: '',
   role: '',
   email: ''
@@ -23,19 +23,17 @@ render () {
   return (
     <>
     <div className='register'>
-      <input name='first_name'
+      <input name='firstName'
         placeholder='First Name'
-        value={this.state.first_name}
+        value={this.state.firstName}
         onChange={e => this.onChange(e)}
       />
-      <br/>
 
-      <input name='last_name'
+      <input name='lastName'
         placeholder='Last Name'
-        value={this.state.last_name}
+        value={this.state.lastName}
         onChange={e => this.onChange(e)}
       />
-      <br/>
 
       <input name='password'
         type='password'
@@ -44,14 +42,12 @@ render () {
 
         onChange={e => this.onChange(e)}
       />
-      <br/>
 
       <input name='email'
         placeholder='Email'
         value={this.state.email}
         onChange={e => this.onChange(e)}
       />
-      <br/>
 
       <label>
         <select name='role' onChange={e => this.onChange(e)}>
@@ -59,7 +55,6 @@ render () {
           <option value='student'>Student</option>
         </select>
       </label>
-      <br/>
 
       <button type='button' onClick={() => this.handleClick()}>Register</button>
     </div>
