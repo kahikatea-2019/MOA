@@ -4,9 +4,9 @@ export default class AddWidget extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            name: '',
-            surname: ' ',
-            cohort: ''
+            name: 'ete',
+            surname: 'surname',
+            cohort: 'cohort'
         }
     }
 
@@ -14,9 +14,9 @@ export default class AddWidget extends React.Component{
         const { name ,surname , cohort} = this.state
         return(
             <React.Fragment>
-            <p><h1>{name}</h1></p>
-            <p><h2>{surname}</h2></p>
-            <p><h2>{cohort}</h2></p>  
+            <h1>{name}</h1>
+            <h2>{surname}</h2>
+            <h3>{cohort}</h3>  
             </React.Fragment>
             ) 
         }
