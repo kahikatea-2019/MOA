@@ -11,9 +11,13 @@ beforeEach(() => {
 afterEach(() => env.cleanup(testDb))
 
 test('submit assessments adds a new assessment to the table', () => {
-
-  return db.submitAssessment(assessment, testDb)
+  const submission = {
+    studentId: 'id',
+    date: new Date(),
+    evidence: 'evidence'
+  }
+  return db.submitAssessment(submission, testDb)
     .then(assessment => {
-      expect(assessment.slength).toBe('fillthisin')
+      expect(submission.id).toBe('id')
     })
 })

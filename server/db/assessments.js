@@ -8,6 +8,6 @@ module.exports = {
 
 function submitAssessment (submission, db = connection) {
   return db('student_assessments')
-    .where({ id: submission.id })
+    .where({ student_id: submission.studentId })
     .update({ evidence: submission.evidence, date: submission.date })
 }
