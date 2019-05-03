@@ -1,11 +1,37 @@
-const env = require('./')
+const env = require('./test-environment')
+const db = require('../server/db/assessments')
 
+let testDb = null
 
-const request = require('supertest')
-const cheerio = require('cheerio')
+beforeEach(() => {
+  testDb = env.getTestDb()
+  return env.initialise(testDb)
+})
 
-const server = require('../server/server')
+afterEach(() => env.cleanup(testDb))
 
-test('good tricks'), () => {
-  request(server)
+test('getAssessments function returns all Assessment data from db', () => {
+  const assessmentsSample = [
+    {
+      id: 1,
+      module_id: 1,
+      title: '1. Use Git and terminal commands to manage a code base',
+      description: 'desc',
+      link: 'link',
+      week_day: 'weekday'
+    },
+    {
+      id: 2,
+      module_id: 1,
+      title: '2. Use npm to manage library dependencies',
+      description: 'desc',
+      link: 'link',
+      week_day: 'weekday'
+    }
+  ]
+
+  return db.getAssessments(assessmentsSample)
+    .then(assessments => {
+      expect(assessments.length).toBe(2)
+    })
 })
