@@ -7,9 +7,7 @@ export default class ProgressModule extends React.Component {
   }
 
   // Replace the getter functions with relevant redux data integration
-  // event handler for onClick
-  // No inputs - module 
-  getModule() {
+  getModule() { // event handler for onClick
     return ({ id: 1, title: 'Module 1: Core Programming' })
   }
 
@@ -54,7 +52,7 @@ export default class ProgressModule extends React.Component {
     return fraction 
   }
 
-  // Function returns the progress form state and also marks complete if necessary
+  // Function returns the progress form state and also marks compl 
   getProgress () {
     const progress = this.state.moduleProgress
     const completion = this.state.moduleComplete
@@ -65,22 +63,17 @@ export default class ProgressModule extends React.Component {
     }
   }
 
-  runMockData () {
-    getModule() // Input data workinng with
-      .then(console.log)
-  }
-
 
   render() {
     return (
       <React.Fragment>
-        <p>Hello</p>
+
+      <p>{}</p>
+
       </React.Fragment>
     )
   }
 }
-
-
 
 
 
