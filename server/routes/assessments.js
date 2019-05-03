@@ -2,12 +2,19 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/assessments.js')
 
-router.post('/:id', (req, res) => {
-  console.log(JSON.stringify({ notice: 'Evidence has been updated' }))
-  db.submitAssessment(req.body)
-    .then(assessment => res.send('student_assessments', assessment))
+router.put('/:id', (req, res) => {
+  const id = req.params.id
+
+  const submission = {
+    studentId: id,
+    date: new Date(),
+    evidence: req.body.evidence
+  }
+
+  db.submitAssessment(submission)
+    .then(submission => res.send('student_assessments', submission))
+    .then(res.json({ notice: 'Evidence has been updated!' }))
     .catch(err => res.status(500).send(err.message))
 })
 
 module.exports = router
-

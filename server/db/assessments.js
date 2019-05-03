@@ -6,11 +6,8 @@ module.exports = {
   submitAssessment
 }
 
-function submitAssessment (assessment, db = connection) {
+function submitAssessment (submission, db = connection) {
   return db('student_assessments')
-    .insert(JSON.stringify({
-      studentId: assessment.studentId,
-      date: assessment.date,
-      evidence: assessment.evidence
-    }))
+    .where({ id: submission.id })
+    .update({ evidence: submission.evidence, date: submission.date })
 }
