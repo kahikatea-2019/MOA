@@ -7,11 +7,11 @@ const App = () => {
   return (
 
     <Router>
-      <DropDownModule />
+    
       <Switch>
         <h1>MOA development has begun!</h1>
-
       </Switch>
+      <DropDownModule />
     </Router>
   )
 }
