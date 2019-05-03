@@ -6,8 +6,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <h1>MOA development has begun!</h1>
-        <Route exact path='/ProgressBar' component={ProgressBar} />
+        <Route path='/progressbar' component={ProgressBar} />
       </Switch>
     </Router>
   )
