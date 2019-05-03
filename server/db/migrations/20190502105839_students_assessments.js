@@ -5,7 +5,7 @@ exports.up = (knex, Promise) => {
     table.integer('assessment_id').references('assessments.id')
     table.integer('status_id').references('statuses.id')
     table.string('evidence')
-    table.string('date_modified')
+    table.datetime('date_modified')
   })
 }
 
