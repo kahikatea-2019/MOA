@@ -3,6 +3,7 @@ exports.up = (knex, Promise) => {
     table.integer('id').primary()
     table.integer('assessment_id').references('assessments.id')
     table.string('title')
+    table.string('link')
   })
 }
 
