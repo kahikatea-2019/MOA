@@ -7,7 +7,7 @@ module.exports = {
 }
 
 function submitAssessment (submission, db = connection) {
-  return db('student_assessments')
+  return db('students_assessments')
     .where({ student_id: submission.studentId })
-    .update({ evidence: submission.evidence, date: submission.date })
+    .update({ evidence: submission.evidence, date_modified: submission.date_modified })
 }

@@ -7,7 +7,7 @@ router.put('/:id', (req, res) => {
 
   const submission = {
     studentId: id,
-    date: new Date(),
+    date_modified: new Date(),
     evidence: req.body.evidence
   }
 
