@@ -50,16 +50,6 @@ export default class DropDownModule extends React.Component {
     ]
   }
 
-  // Code to remove duplicates and return an array of module Ids - this may not be needed if the data
-  // passed can come directly from the assessments table
-  // numModules = (module) => module.filter((v,i) => module.indexOf(v) === i)
-  // numModules(module)
-
-  // Code to filter through module
-  // module1Data = state.module.filter(assessment => {
-  // if (assessment.moduleId === moduleId)
-  // })
-
     moduleExercises = this.state.module.map(assessment => {
       return <li key={assessment.exerciseTitle}>{assessment.exerciseTitle}</li>
     })
