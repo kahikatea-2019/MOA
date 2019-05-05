@@ -18,7 +18,7 @@
     "db:delete": "rm -f server/db/dev.sqlite3",
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
-    "test": "jest --watchAll"
+    "test":"jest --watchAll"
   },
   "babel": {
     "presets": [
