@@ -36,8 +36,8 @@
     ]
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^7.0.0",
+    "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.16.5",

@@ -11,7 +11,7 @@ export default class AddWidget extends React.Component {
   }
 
   render () {
-    const { name, surname, cohort } = this.state
+    const { name,surname, cohort } = this.state
     return (
       <React.Fragment>
         <h1>{name}</h1>

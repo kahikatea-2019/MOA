@@ -9,10 +9,10 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <h1>MOA development has begun!</h1>
+        <Route path='/register' component={Register} />
         <Route path ='/' component={Header} />
         <Route path='/progressbar' component={ProgressBar} />
-        <Route path='/register' component={Register} />
+        <h1>MOA development has begun!</h1>
       </Switch>
     </Router>
   )
