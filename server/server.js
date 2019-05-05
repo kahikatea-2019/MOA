@@ -5,6 +5,9 @@ const cohortsRoute = require('./routes/cohorts')
 
 const server = express()
 
+server.use(express.json())
+server.use(express.static(path.join(__dirname, './public')))
+
 const authRoutes = require('./routes/auth')
 
 server.use(express.json())
