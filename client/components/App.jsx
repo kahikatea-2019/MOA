@@ -8,6 +8,7 @@ const App = () => {
     <Router>
       <Dashboard />
       <Switch>
+        <Route path= '/dashboard' component={Dashboard} />
         <Route path='/register' component={Register} />
         <Route path ='/' component={Header} />
       </Switch>

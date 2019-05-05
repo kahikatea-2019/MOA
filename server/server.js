@@ -5,7 +5,7 @@ const cohortsRoute = require('./routes/cohorts')
 
 const server = express()
 
-const starterRoute = require('./routes/starter')
+// const starterRoute = require('./routes/starter')
 const authRoutes = require('./routes/auth')
 
 server.use(express.json())
