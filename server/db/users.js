@@ -8,13 +8,13 @@ module.exports = {
   createUser
 }
 
-function getUser (id, db = connection || testDb) {
+function getUser (id, db = connection) {
   return db('users')
     .where('id', id)
     .first()
 }
 
-function createUser ({ firstName, lastName, email, password, role, cohort }, db = connection) {
+function createUser ({ firstName, lastName, email, password, role }, db = connection) {
   return generateHash(password)
-    .then(hash => db('users').insert({ firstName, lastName, email, hash, role, cohort }))
+    .then(hash => db('users').insert({ first_name: firstName, last_name: lastName, email, hash, role }))
 }
