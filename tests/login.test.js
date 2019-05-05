@@ -11,6 +11,7 @@ test('<Login/>', () => {
   expect(wrapper.find('input').length).toBe(2)
 }
 )
+
 test('<Login/>', () => {
   const wrapper = shallow(<Login />)
   expect(wrapper.find('p').length).toBe(2)
