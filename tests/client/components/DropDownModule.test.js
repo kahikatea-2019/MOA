@@ -7,8 +7,3 @@ test('<DropDownModule/>', () => {
   const wrapper = shallow(<DropDownModule />)
   expect(wrapper.find('h3').text()).toBe('Module Exercises')
 })
-
-test('<DropDownModule/>', () => {
-  const wrapper = shallow(<DropDownModule />)
-  expect(wrapper.find('ul').text()).toBe('hello')
-})
