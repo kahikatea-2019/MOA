@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Header from './Header'
 import Register from './Register'
+import DropDownModule from './DropDownModule'
 
 const App = () => {
   return (
