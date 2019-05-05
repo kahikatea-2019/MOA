@@ -1,7 +1,7 @@
 const request = require('supertest')
 const cheerio = require('cheerio')
 
-const server = require('../server/server.js')
+const server = require('../../../server/server.js')
 
 test('/cohorts/:id sends back a 200 status', () => {
   request(server)

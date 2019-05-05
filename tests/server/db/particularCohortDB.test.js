@@ -1,6 +1,6 @@
 // require('babel-polyfill')
-const env = require('./test-environment')
-const db = require('../server/db/cohorts')
+const env = require('../../test-environment')
+const db = require('../../../server/db/cohorts')
 
 let testDb = null
 
