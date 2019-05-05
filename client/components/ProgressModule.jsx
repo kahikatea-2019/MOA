@@ -10,6 +10,7 @@ export default class ProgressModule extends React.Component {
     }
 
     this.getModule = this.getModule.bind(this)
+    this.getProgress = this.getProgress.bind(this)
   }
 
   // Replace the getter functions with relevant redux data integration
@@ -76,10 +77,36 @@ export default class ProgressModule extends React.Component {
   // }
 
   calculateProgress () {
+
     const module = this.getModule()
     const assessments = this.getAssesments(module.id)
-    const input =  assessments.find(assessment => {
-      assessment.id   
+    let sutdentAssess = this.getStudentsAssessments()
+    const input = []
+
+    // Create array of all relevant student assesments
+    assessments.forEach(assessment => {
+      sutdentAssess.forEach(studentAssessment => {
+        if (assessment.id === studentAssessment.assessment_id) {
+          input.push(studentAssessment)
+        }
+      })
+    })
+
+    // Calculates a score for each mark and stores it in an array.
+    let output = input.map(studentAssessment => {
+      const score = this.getAssesmentStatus(studentAssessment.status_id)
+      return score
+    })
+
+    let updatedProgress = 0
+    output.forEach(mark => {
+      updatedProgress += mark
+    })
+
+    console.log('Updated', updatedProgress)
+
+    this.setState({
+      moduleProgress: updatedProgress
     })
   }
 
@@ -87,7 +114,8 @@ export default class ProgressModule extends React.Component {
     return (
       <React.Fragment>
         <button onClick={() => this.calculateProgress()}>Calculate Progress</button>
-        <h3>Module progress: {this.state.getProgress}</h3>
+        <h3>Module progress: {Math.round(this.getProgress() * 100)} %</h3>
+        {console.log(this.state.moduleProgress)}
       </React.Fragment>
     )
   }
