@@ -6,10 +6,10 @@ const cohortsRoute = require('./routes/cohorts')
 const server = express()
 
 const assessmentsRoute = require('./routes/assessments')
-const authRoutes = require('./routes/auth')
-
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
+
+const authRoutes = require('./routes/auth')
 
 server.use('/assessments', assessmentsRoute)
 server.use('/api/v1/auth', authRoutes)
