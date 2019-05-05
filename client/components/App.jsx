@@ -11,7 +11,6 @@ const App = () => {
       <Switch>
         <Route path='/register' component={Register} />
         <Route path ='/' component={Header} />
-        <h1>MOA development has begun!</h1>
       </Switch>
       <DropDownModule />
     </Router>
