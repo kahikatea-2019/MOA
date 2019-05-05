@@ -1,5 +1,4 @@
 import React from 'react'
-// import { statement } from '@babel/template'
 
 class ProgressBar extends React.Component {
  state = {
@@ -11,17 +10,15 @@ class ProgressBar extends React.Component {
    ]
  }
 
-    statusArr = this.state.statuses.map(assessment => {
-      return assessment.status_id
-    })
-
-    render () {
-      return (
+ render () {
+   return (
       <>
-      <p>{this.statusArr}</p>
+        <p>{this.state.statuses.map(assessment => {
+          return assessment.status_id
+        }) }</p>
       </>
-      )
-    }
+   )
+ }
 }
 
 export default ProgressBar
