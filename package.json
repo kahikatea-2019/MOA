@@ -18,7 +18,6 @@
     "db:delete": "rm -f server/db/dev.sqlite3",
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
-    "postinstall": "run-s db:migrate db:seed",
     "test": "jest --watchAll"
   },
   "babel": {
@@ -37,9 +36,12 @@
     ]
   },
   "dependencies": {
+    "dotenv": "^7.0.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.16.5",
+    "libsodium-wrappers": "^0.7.4",
     "path": "^0.12.7",
     "react-router-dom": "^5.0.0",
     "sqlite3": "^4.0.6",
