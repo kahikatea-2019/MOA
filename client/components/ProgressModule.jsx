@@ -77,15 +77,14 @@ export default class ProgressModule extends React.Component {
   // }
 
   calculateProgress () {
-
     const module = this.getModule()
     const assessments = this.getAssesments(module.id)
-    let sutdentAssess = this.getStudentsAssessments()
+    let studentAsses = this.getStudentsAssessments()
     const input = []
 
     // Create array of all relevant student assesments
     assessments.forEach(assessment => {
-      sutdentAssess.forEach(studentAssessment => {
+      studentAsses.forEach(studentAssessment => {
         if (assessment.id === studentAssessment.assessment_id) {
           input.push(studentAssessment)
         }
