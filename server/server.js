@@ -13,7 +13,6 @@ const userRoute = require('./routes/users')
 server.use('/assessments', assessmentsRoute)
 server.use('/cohorts', cohortsRoute)
 server.use('/users', userRoute)
-
 server.use('/api/v1/auth', authRoutes)
 
 server.get('*', (req, res) => {
