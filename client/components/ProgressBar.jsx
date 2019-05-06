@@ -25,9 +25,9 @@ render () {
   return (
       <>
     <BootStrapProgressBar>
-      <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={1} />
-      <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={2} />
-      <BootStrapProgressBar striped variant="danger" now={(this.inProgress.length / this.state.statuses.length) * 100} key={3} />
+      <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={4} />
+      <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={3} />
+      <BootStrapProgressBar striped variant="danger" now={(this.inProgress.length / this.state.statuses.length) * 100} key={2} />
     </BootStrapProgressBar>
       </>
   )
