@@ -19,7 +19,7 @@
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
     "postinstall": "run-s db:migrate db:seed",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll "
   },
   "babel": {
     "presets": [
