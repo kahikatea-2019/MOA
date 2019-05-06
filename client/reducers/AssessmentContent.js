@@ -1,4 +1,6 @@
-import { RECIEVE_ASSESSMENT_CONTENT } from '../actions/AssessmentContent'
+import {
+  RECIEVE_ASSESSMENT_CONTENT
+} from '../actions/assessmentContent'
 
 const content = (AssessmentContent = [], action) => {
   switch (action.type) {
