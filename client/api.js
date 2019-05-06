@@ -1,10 +1,10 @@
 import request from 'superagent'
 
-export default function getAssessmentStatus () {
-  return request.get('/students/:id')
+export function getAssessments () {
+  return request.get('/assessments')
     .then(res => {
-      const statuses = res.body
-      return statuses
+      const assessments = res.body
+      return assessments
     })
     .catch(err => {
       // eslint-disable-next-line no-console
