@@ -1,10 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-import Login from './Login'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Login from './Login'
