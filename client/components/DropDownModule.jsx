@@ -5,20 +5,18 @@ export default class DropDownModule extends React.Component {
     module: getInitialData()
   }
 
-    moduleExercises = this.state.module.map(assessment => {
-      return <li key={assessment.exerciseTitle}>{assessment.exerciseTitle}</li>
-    })
-
-    render () {
-      return (
-        <div>
-          <h3>Module Exercises</h3>
-          <ul>
-            {this.moduleExercises}
-          </ul>
-        </div>
-      )
-    }
+  render () {
+    return (
+      <div>
+        <h3>Module Exercises</h3>
+        <ul>
+          {this.state.module.map(assessment =>
+            <li key={assessment.exerciseTitle}>{assessment.exerciseTitle}</li>
+          )}
+        </ul>
+      </div>
+    )
+  }
 }
 
 function getInitialData () {
