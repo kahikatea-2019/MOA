@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 class ProgressBar extends React.Component {
   render (props) {
@@ -13,10 +12,4 @@ class ProgressBar extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    statuses: state.studentAssessments
-  }
-}
-
-export default connect(mapStateToProps)(ProgressBar)
+export default ProgressBar
