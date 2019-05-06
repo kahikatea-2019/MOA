@@ -8,7 +8,7 @@ export default class Dashboard extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1><Header /></h1>
+        <Header />
         <ProgressBar />
         <DropDownModule />
       </React.Fragment>
