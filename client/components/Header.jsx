@@ -3,11 +3,7 @@ import React from 'react'
 export default class Header extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      name: 'ete',
-      surname: 'surname',
-      cohort: 'cohort'
-    }
+    this.state = getInitialData()
   }
 
   render () {
@@ -19,5 +15,13 @@ export default class Header extends React.Component {
         <h3>{cohort}</h3>
       </React.Fragment>
     )
+  }
+}
+
+function getInitialData () {
+  return {
+    name: 'ete',
+    surname: 'surname',
+    cohort: 'cohort'
   }
 }
