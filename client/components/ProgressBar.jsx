@@ -24,6 +24,7 @@ inProgress = this.state.statuses.filter(item =>
 render () {
   return (
       <>
+      <h3>Cohort Assessment Progress</h3>
     <BootStrapProgressBar>
       <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={4} />
       <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={3} />
