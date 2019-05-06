@@ -3,7 +3,7 @@ import React from 'react'
 import Header from './Header'
 import ProgressBar from './ProgressBar'
 import DropDownModule from './DropDownModule'
-import ProgressModule from './ProgressModule'
+import ProgressModules from './ProgressModules'
 
 export default class Dashboard extends React.Component {
   render () {
@@ -12,7 +12,7 @@ export default class Dashboard extends React.Component {
         <Header />
         <ProgressBar />
         <DropDownModule />
-        <ProgressModule />
+        <ProgressModules />
       </React.Fragment>
     )
   }
