@@ -1,9 +1,9 @@
 import request from 'superagent'
 
 export function getAssessmentStatus () {
-  return request.get('/assessments')
+  return request.get('/students/:id')
     .then(res => {
-      const statuses = res.body.status
+      const statuses = res.body
       return statuses
     })
     .catch(err => {
