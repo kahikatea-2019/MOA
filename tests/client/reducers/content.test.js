@@ -1,6 +1,6 @@
-import { RECIEVE_ASSESSMENT_CONTENT } from '../client/actions/AssessmentContent'
+import { RECIEVE_ASSESSMENT_CONTENT } from '../../../client/actions/AssessmentContent'
 
-import reducer from '../client/reducers/AssessmentContent'
+import reducer from '../../../client/reducers/AssessmentContent'
 
 test('reducer populates some initial state', () => {
   const newState = reducer(undefined, '@@INIT')
