@@ -23,9 +23,20 @@ export default class ProgressBar extends React.Component {
       <>
         <h3>Cohort Assessment Progress</h3>
         <BootStrapProgressBar>
-          <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={4} />
-          <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={3} />
-          <BootStrapProgressBar striped variant="danger" now={(this.inProgress.length / this.state.statuses.length) * 100} key={2} />
+          <BootStrapProgressBar
+            striped
+            variant="success"
+            now={(this.complete.length / this.state.statuses.length) * 100}
+            key={4} />
+          <BootStrapProgressBar
+            variant="warning"
+            now={(this.awaitingReview.length / this.state.statuses.length) * 100}
+            key={3} />
+          <BootStrapProgressBar
+            striped
+            variant="danger"
+            now={(this.inProgress.length / this.state.statuses.length) * 100}
+            key={2} />
         </BootStrapProgressBar>
       </>
     )
