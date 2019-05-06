@@ -37,8 +37,6 @@ import React from 'react'
 //     ])
 //   }
 
-
-
 //   // Function returns the progress form state and also marks compl
 //   getProgress () {
 //     const progress = this.state.moduleProgress
@@ -100,53 +98,53 @@ import React from 'react'
 //   }
 // }
 
-export function ProgressModule (props) {
+export default function ProgressModule (props) {
   const progress = calculateProgress()
-  const completed = progress >= 0.99 ? true : false
   return (
     <React.Fragment>
       <h3>Module progress: {Math.round(progress * 100)} %</h3>
-      <p>Completed: {completed}</p>
     </React.Fragment>
   )
 }
 
 function calculateProgress () {
   // const { module, assessments, studentsAssessments } = props
-  
+
   // mocked data -  this should come from props (from Dashboard)
-  const module = { id: 1, title: "Module 1: Core Programming" }
+  const module = { id: 1, title: 'Module 1: Core Programming' }
   const assessments = [
-    {id: 1, module_id: 1, title: '1. Use Git and terminal commands to manage a code base', description: 'desc'},
-    {id: 2, module_id: 1, title: '2. Use npm to manage library dependencies', description: 'desc'},
-    {id: 3, module_id: 1, title: '3. Create well structured and tested code using JavaScript ES6', description: 'desc'},
-    {id: 4, module_id: 1, title: '4. Design, build and use a relational database to persist data', description: 'desc'},
-    {id: 5, module_id: 1, title: '5. Create code which reads and writes to the filesystem', description: 'desc'},
-    {id: 6, module_id: 1, title: '6. Build a Command Line Interface tool', description: 'desc'}
+    { id: 1, module_id: 1, title: '1. Use Git and terminal commands to manage a code base', description: 'desc' },
+    { id: 2, module_id: 1, title: '2. Use npm to manage library dependencies', description: 'desc' },
+    { id: 3, module_id: 1, title: '3. Create well structured and tested code using JavaScript ES6', description: 'desc' },
+    { id: 4, module_id: 1, title: '4. Design, build and use a relational database to persist data', description: 'desc' },
+    { id: 5, module_id: 1, title: '5. Create code which reads and writes to the filesystem', description: 'desc' },
+    { id: 6, module_id: 1, title: '6. Build a Command Line Interface tool', description: 'desc' }
   ]
   const studentAssessments = [
-    {id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: 'date'},
-    {id: 1, student_id: 1, assessment_id: 2, status_id: 3, evidence: 'evidence', date_modified: 'date'},
-    {id: 1, student_id: 1, assessment_id: 3, status_id: 2, evidence: 'evidence', date_modified: 'date'},
-    {id: 1, student_id: 1, assessment_id: 4, status_id: 1, evidence: 'evidence', date_modified: 'date'},
-    {id: 1, student_id: 1, assessment_id: 5, status_id: 2, evidence: 'evidence', date_modified: 'date'},
-    {id: 1, student_id: 1, assessment_id: 6, status_id: 1, evidence: 'evidence', date_modified: 'date'}
+    { id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: 'date' },
+    { id: 1, student_id: 1, assessment_id: 2, status_id: 3, evidence: 'evidence', date_modified: 'date' },
+    { id: 1, student_id: 1, assessment_id: 3, status_id: 2, evidence: 'evidence', date_modified: 'date' },
+    { id: 1, student_id: 1, assessment_id: 4, status_id: 1, evidence: 'evidence', date_modified: 'date' },
+    { id: 1, student_id: 1, assessment_id: 5, status_id: 2, evidence: 'evidence', date_modified: 'date' },
+    { id: 1, student_id: 1, assessment_id: 6, status_id: 1, evidence: 'evidence', date_modified: 'date' }
   ]
-  
+
   const input = []
 
   // Create array of all relevant student assesments
   assessments.forEach(assessment => {
-    studentsAssessments.forEach(studentAssessment => {
+    studentAssessments.forEach(studentAssessment => {
       if (assessment.id === studentAssessment.assessment_id) {
         input.push(studentAssessment)
       }
     })
   })
 
+  console.log('input', input)
+
   // Calculates a score for each mark and stores it in an array.
   let output = input.map(studentAssessment => {
-    const score = this.getAssesmentStatus(studentAssessment.status_id)
+    const score = getAssessmentStatus(studentAssessment.status_id)
     return score
   })
 
@@ -159,20 +157,7 @@ function calculateProgress () {
   return updatedProgress
 }
 
-getProgress () {
-  const progress = this.state.moduleProgress
-  const completion = this.state.moduleComplete
-  if (progress >= 0.99 && !completion) { // 0.99 incase the module progress didn't add nicely (#Fractions)
-    this.setState({
-      moduleComplete: true
-    })
-    // return (this.renderCheck())
-  }
-  return progress
-}
-
-
-getAssesmentStatus (status_id) { // Still mock data! Output decided by case statement
+function getAssessmentStatus (status_id) { // Still mock data! Output decided by case statement
   let fraction = 0
   switch (status_id) {
     case 1:
