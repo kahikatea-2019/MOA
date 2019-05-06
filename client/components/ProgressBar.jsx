@@ -6,17 +6,26 @@ export default class ProgressBar extends React.Component {
     statuses: getInitialData()
   }
 
-  complete = this.state.statuses.filter(item =>
-    item.status_id === 4
-  )
+  getCompletedPercentage = () => {
+    const completed = this.state.statuses.filter(item =>
+      item.status_id === 4
+    )
+    return (completed.length / this.state.statuses.length) * 100
+  }
 
-  awaitingReview = this.state.statuses.filter(item =>
-    item.status_id === 3
-  )
+  getAwaitingReviewPercentage = () => {
+    const awaitingReview = this.state.statuses.filter(item =>
+      item.status_id === 3
+    )
+    return (awaitingReview.length / this.state.statuses.length) * 100
+  }
 
-  inProgress = this.state.statuses.filter(item =>
-    item.status_id === 2
-  )
+  getInProgressPercentage = () => {
+    const inProgress = this.state.statuses.filter(item =>
+      item.status_id === 2
+    )
+    return (inProgress.length / this.state.statuses.length) * 100
+  }
 
   render () {
     return (
@@ -26,16 +35,16 @@ export default class ProgressBar extends React.Component {
           <BootStrapProgressBar
             striped
             variant="success"
-            now={(this.complete.length / this.state.statuses.length) * 100}
+            now={this.getCompletedPercentage()}
             key={4} />
           <BootStrapProgressBar
             variant="warning"
-            now={(this.awaitingReview.length / this.state.statuses.length) * 100}
+            now={this.getAwaitingReviewPercentage()}
             key={3} />
           <BootStrapProgressBar
             striped
             variant="danger"
-            now={(this.inProgress.length / this.state.statuses.length) * 100}
+            now={this.getInProgressPercentage()}
             key={2} />
         </BootStrapProgressBar>
       </>
