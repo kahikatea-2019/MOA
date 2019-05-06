@@ -1,6 +1,6 @@
 import {
   RECIEVE_ASSESSMENT_STATUSES
-} from '../client/actions/index'
+} from '../../../client/actions/assessmentStatus'
 
 import reducer from '../../../client/reducers/assessmentStatus'
 

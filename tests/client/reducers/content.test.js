@@ -1,6 +1,8 @@
-import { RECIEVE_ASSESSMENT_CONTENT } from '../../../client/actions/AssessmentContent'
+import {
+  RECIEVE_ASSESSMENT_CONTENT
+} from '../../../client/actions/assessmentContent'
 
-import reducer from '../../../client/reducers/AssessmentContent'
+import reducer from '../../../client/reducers/assessmentContent'
 
 test('reducer populates some initial state', () => {
   const newState = reducer(undefined, '@@INIT')
@@ -9,17 +11,17 @@ test('reducer populates some initial state', () => {
 
 test('reducer handles RECIEVE_ASSESSMENT_CONTENT correctly', () => {
   // Arrange
-  const AssessmentContent = {
+  const assessmentContent = {
     content: [0, 1, 2, 3]
   }
   const action = {
     type: RECIEVE_ASSESSMENT_CONTENT,
-    content: AssessmentContent
+    content: assessmentContent
   }
   // Act
-  const newState = reducer(AssessmentContent, action)
+  const newState = reducer(assessmentContent, action)
 
   // Assert
 
-  expect(newState).toBe(AssessmentContent)
+  expect(newState).toBe(assessmentContent)
 })

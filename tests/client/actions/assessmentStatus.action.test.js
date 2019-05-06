@@ -1,7 +1,9 @@
-import { requestAssessmentStatuses, recieveAssessmentStatuses,
+import {
+  requestAssessmentStatuses,
+  recieveAssessmentStatuses,
   REQUEST_ASSESSMENT_STATUSES,
   RECIEVE_ASSESSMENT_STATUSES
-} from '../client/actions/index'
+} from '../../../client/actions/assessmentStatus'
 
 test('requestAssessmentStatuses creates a correct action', () => {
   const name = 'test assessmentStatuses'
