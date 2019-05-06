@@ -2,7 +2,14 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Dashboard from '../../../client/components/Dashboard'
 
-test('<Dashboard/>', () => {
-  const wrapper = shallow(<Dashboard />)
-  expect(wrapper.find('h1').text()).toBe('<Header />')
+Dashboard.prototype.componentDidMount = () => {}
+test('test runner is working', () => {
+  expect(true).toBeTruthy()
+})
+
+describe('Dashboard', () => {
+  it('Dashboard should render correctly in "debug" mode', () => {
+    const component = shallow(<Dashboard debug />)
+    expect(component).toMatchSnapshot()
+  })
 })
