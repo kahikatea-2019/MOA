@@ -1,8 +1,19 @@
 import React from 'react'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+import Login from './Login'
+import Register from './Register'
+import Dashboard from './Dashboard'
 
 const App = () => {
   return (
-    <h1>MOA development has begun!</h1>
+    <Router>
+      <Switch>
+        <Route exact path='/' component ={Login} />
+        <Route path='/register' component={Register} />
+      </Switch>
+      <Dashboard />
+    </Router>
   )
 }
 
