@@ -1,8 +1,8 @@
 import {
   requestAssessmentStatuses,
-  recieveAssessmentStatuses,
+  receiveAssessmentStatuses,
   REQUEST_ASSESSMENT_STATUSES,
-  RECIEVE_ASSESSMENT_STATUSES
+  RECEIVE_ASSESSMENT_STATUSES
 } from '../../../client/actions/assessmentStatus'
 
 test('requestAssessmentStatuses creates a correct action', () => {
@@ -14,9 +14,9 @@ test('requestAssessmentStatuses creates a correct action', () => {
   expect(action).toEqual(expectedAction)
 })
 
-test('recieveAssessmentStatuses creates a correct action', () => {
+test('receiveAssessmentStatuses creates a correct action', () => {
   const name = 'test studentAssessments'
-  const action = recieveAssessmentStatuses(name)
-  expect(action.type).toBe(RECIEVE_ASSESSMENT_STATUSES)
+  const action = receiveAssessmentStatuses(name)
+  expect(action.type).toBe(RECEIVE_ASSESSMENT_STATUSES)
   expect(action.studentAssessments).toBe(name)
 })
