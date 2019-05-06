@@ -1,12 +1,12 @@
-const getDbConnection = require('knex')
+const getDbConn = require('knex')
 
-const testConfig = require('../server/db/knexfile')
+const testConfig = require('../server/db/knexfile').test
 
 module.exports = {
-  // Connect to test data
-  getTestDb: () => getDbConnection(testConfig),
+  // Create a separate in-memory database before each test
+  // In our tests, we can get at the database as `t.context.db`
+  getTestDb: () => getDbConn(testConfig),
 
-  // Render fresh testDb for each test run
   initialise: (db) => {
     return db.migrate.latest()
       .then(() => {
