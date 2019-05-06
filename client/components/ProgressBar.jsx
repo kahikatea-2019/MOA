@@ -1,4 +1,5 @@
 import React from 'react'
+import { ProgressBar as BootStrapProgressBar } from 'react-bootstrap/ProgressBar'
 
 class ProgressBar extends React.Component {
  state = {
@@ -10,15 +11,31 @@ class ProgressBar extends React.Component {
    ]
  }
 
- render () {
-   return (
+ complete = this.state.statuses.filter(item =>
+   item.status_id !== 4
+ )
+awaitingReview = this.state.statuses.filter(item =>
+  item.status_id !== 3
+)
+inProgress = this.state.statuses.filter(item =>
+  item.status_id !== 2
+)
+notStarted = this.state.statuses.filter(item =>
+  item.status_id !== 1
+)
+
+render () {
+  return (
       <>
-        <p>{this.state.statuses.map(assessment => {
-          return assessment.status_id
-        }) }</p>
+    <BootStrapProgressBar>
+      <BootStrapProgressBar striped variant="success" now={((this.complete.length / this.state.statuses.length) * 100)} key={1} />
+      <BootStrapProgressBar variant="warning" now={((this.awaitingReview.length / this.state.statuses.length) * 100)} key={2} />
+      <BootStrapProgressBar striped variant="danger" now={((this.inProgress.length / this.state.statuses.length) * 100)} key={3} />
+    </BootStrapProgressBar>
       </>
-   )
- }
+  )
+}
 }
 
 export default ProgressBar
+
