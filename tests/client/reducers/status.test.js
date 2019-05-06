@@ -2,7 +2,7 @@ import {
   RECIEVE_ASSESSMENT_STATUSES
 } from '../client/actions/index'
 
-import reducer from '../client/reducers/assessmentStatus'
+import reducer from '../../../client/reducers/assessmentStatus'
 
 test('reducer populates some initial state', () => {
   const newState = reducer(undefined, '@@INIT')

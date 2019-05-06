@@ -1,7 +1,6 @@
 import {
   RECIEVE_ASSESSMENT_STATUSES
-
-} from '../actions/index'
+} from '../actions/assessmentStatus'
 
 const status = (AssessmentStatus = [], action) => {
   switch (action.type) {
