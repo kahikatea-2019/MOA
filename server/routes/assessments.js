@@ -2,6 +2,17 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/assessments')
 
+router.get('/', (req, res) => {
+  db.getAssessments()
+    .then(assessments => {
+      console.log('server:', assessments)
+      res.json(assessments)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
+
 router.put('/:id', (req, res) => {
   const id = req.params.id
   const submission = {
@@ -12,16 +23,6 @@ router.put('/:id', (req, res) => {
   db.submitAssessment(submission)
     .then(() => res.json({ notice: 'Evidence has been updated!' }))
     .catch(err => res.status(500).send(err.message))
-})
-
-router.get('/', (req, res) => {
-  db.getAssessments()
-    .then(assessments => {
-      res.json(assessments)
-    })
-    .catch(err => {
-      res.status(500).send(err.message)
-    })
 })
 
 module.exports = router
