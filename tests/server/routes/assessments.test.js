@@ -9,10 +9,11 @@ beforeEach(() => {
   db.reset()
 })
 
-test('GET /assessments returns all 24 assessments', () => {
+test('GET /assessments returns all 24 assessments as JSON', () => {
   return request(server)
     .get('/assessments')
     .then(res => {
+      expect(res.type).toBe('application/json')
       expect(res.body).toHaveLength(24)
     })
 })
