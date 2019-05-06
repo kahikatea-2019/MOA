@@ -12,5 +12,5 @@ test('test runner is working', () => {
 
 test('<ProgressBar />', () => {
   const wrapper = shallow(<ProgressBar />)
-  expect(wrapper.find('p').text()).toBe('4321')
+  expect(wrapper.find('p').text()).toBe('4341')
 })
