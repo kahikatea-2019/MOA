@@ -3,8 +3,6 @@ const getDbConn = require('knex')
 const testConfig = require('../server/db/knexfile').test
 
 module.exports = {
-  // Test database connection
-  getTestDb: () => getDbConn(testConfig),
   // Create a separate in-memory database before each test
   // In our tests, we can get at the database as `t.context.db`
   getTestDb: () => getDbConn(testConfig),
@@ -16,13 +14,9 @@ module.exports = {
       })
   },
 
-  // Destroy the database connection after each test
+  // Terminate the previously created db connection upon completion of each test run
   cleanup: (db) => {
     return db.destroy()
   }
-}
 
-  cleanup: (db) => {
-    return db.destroy()
-  }
 }
