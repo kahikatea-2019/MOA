@@ -1,8 +1,9 @@
-import { 
+import {
   requestAssessmentContent,
-  recieveAssessmentContent,
+  receiveAssessmentContent,
   REQUEST_ASSESSMENT_CONTENT,
-  RECIEVE_ASSESSMENT_CONTENT } from '../../../client/actions/assessmentContent'
+  RECEIVE_ASSESSMENT_CONTENT
+} from '../../../client/actions/assessmentContent'
 
 test('requestAssessmentContent creates a correct action', () => {
   const name = 'test assessmentContent'
@@ -10,9 +11,9 @@ test('requestAssessmentContent creates a correct action', () => {
   expect(action.type).toBe(REQUEST_ASSESSMENT_CONTENT)
 })
 
-test('recieveAssessmentContent creates a correct action', () => {
+test('receiveAssessmentContent creates a correct action', () => {
   const name = 'test content'
-  const action = recieveAssessmentContent(name)
-  expect(action.type).toBe(RECIEVE_ASSESSMENT_CONTENT)
+  const action = receiveAssessmentContent(name)
+  expect(action.type).toBe(RECEIVE_ASSESSMENT_CONTENT)
   expect(action.content).toBe(name)
 })
