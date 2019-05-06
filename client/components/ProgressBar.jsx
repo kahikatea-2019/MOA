@@ -2,32 +2,34 @@ import React from 'react'
 import { ProgressBar as BootStrapProgressBar } from 'react-bootstrap'
 
 export default class ProgressBar extends React.Component {
- state = {
-   statuses: getInitialData()
- }
+  state = {
+    statuses: getInitialData()
+  }
 
- complete = this.state.statuses.filter(item =>
-   item.status_id === 4
- )
-awaitingReview = this.state.statuses.filter(item =>
-  item.status_id === 3
-)
-inProgress = this.state.statuses.filter(item =>
-  item.status_id === 2
-)
-
-render () {
-  return (
-      <>
-      <h3>Cohort Assessment Progress</h3>
-    <BootStrapProgressBar>
-      <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={4} />
-      <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={3} />
-      <BootStrapProgressBar striped variant="danger" now={(this.inProgress.length / this.state.statuses.length) * 100} key={2} />
-    </BootStrapProgressBar>
-      </>
+  complete = this.state.statuses.filter(item =>
+    item.status_id === 4
   )
-}
+
+  awaitingReview = this.state.statuses.filter(item =>
+    item.status_id === 3
+  )
+
+  inProgress = this.state.statuses.filter(item =>
+    item.status_id === 2
+  )
+
+  render () {
+    return (
+      <>
+        <h3>Cohort Assessment Progress</h3>
+        <BootStrapProgressBar>
+          <BootStrapProgressBar striped variant="success" now={(this.complete.length / this.state.statuses.length) * 100} key={4} />
+          <BootStrapProgressBar variant="warning" now={(this.awaitingReview.length / this.state.statuses.length) * 100} key={3} />
+          <BootStrapProgressBar striped variant="danger" now={(this.inProgress.length / this.state.statuses.length) * 100} key={2} />
+        </BootStrapProgressBar>
+      </>
+    )
+  }
 }
 
 function getInitialData () {
