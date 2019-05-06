@@ -1,5 +1,5 @@
 export const REQUEST_ASSESSMENT_STATUSES = 'REQUEST_ASSESSMENT_STATUSES'
-export const RECIEVE_ASSESSMENT_STATUSES = 'RECIEVE_ASSESSMENT_STATUSES'
+export const RECEIVE_ASSESSMENT_STATUSES = 'RECEIVE_ASSESSMENT_STATUSES'
 
 export const requestAssessmentStatuses = () => {
   return {
@@ -7,9 +7,9 @@ export const requestAssessmentStatuses = () => {
 
   }
 }
-export const recieveAssessmentStatuses = (studentAssessments) => {
+export const receiveAssessmentStatuses = (studentAssessments) => {
   return {
-    type: RECIEVE_ASSESSMENT_STATUSES,
+    type: RECEIVE_ASSESSMENT_STATUSES,
     studentAssessments
   }
 }

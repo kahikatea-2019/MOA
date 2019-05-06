@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProgressBar as BootStrapProgressBar } from 'react-bootstrap'
 
-export default class ProgressBar extends React.Component {
+export default class CohortProgress extends React.Component {
  state = {
    statuses: [
      { id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: Date.now() },
