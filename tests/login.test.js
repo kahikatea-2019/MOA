@@ -1,31 +1,17 @@
-const request = require('supertest')
-const cheerio = require('cheerio')
-
-const server = require('../server/server')
+import React from 'react'
+import {shallow} from 'enzyme'
+import Login from '../client/components/Login'
 
 test('test harness is set up correctly', () => {
   expect(true).toBe(true)
 })
 
-test('Login renders a <input>', () => {
-  request(server)
-    .get('/')
-    .expect(200)
-    .end((err, res) => {
-      expect(err).toBeNull()
-      const $ = cheerio.load(res.text)
-      const inputLength = $('input').length
-      expect(inputLength).toBe(2)
-    })
+test('<Login/> has 2 inputs', () => {
+  const wrapper = shallow(<Login />)
+  expect(wrapper.find('input').length).toBe(2)
 })
-test('Login renders a <p>', () => {
-  request(server)
-    .get('/')
-    .expect(200)
-    .end((err, res) => {
-      expect(err).toBeNull()
-      const $ = cheerio.load(res.text)
-      const pLength = $('p').length
-      expect(pLength).toBe(2)
-    })
+
+test('<Login/> has 2 p', () => {
+  const wrapper = shallow(<Login />)
+  expect(wrapper.find('p').length).toBe(2)
 })
