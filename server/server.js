@@ -2,16 +2,18 @@ const path = require('path')
 const express = require('express')
 const server = express()
 
-const cohortsRoute = require('./routes/cohorts')
-const assessmentsRoute = require('./routes/assessments')
-const authRoutes = require('./routes/auth')
-
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.use('/assessments/', assessmentsRoute)
-server.use('/api/v1/auth', authRoutes)
+const assessmentsRoute = require('./routes/assessments')
+const cohortsRoute = require('./routes/cohorts')
+const authRoutes = require('./routes/auth')
+const userRoute = require('./routes/users')
+
+server.use('/assessments', assessmentsRoute)
 server.use('/cohorts', cohortsRoute)
+server.use('/users', userRoute)
+server.use('/api/v1/auth', authRoutes)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'))
