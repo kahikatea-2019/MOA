@@ -12,16 +12,13 @@ export default class ProgressBar extends React.Component {
  }
 
  complete = this.state.statuses.filter(item =>
-   item.status_id !== 4
+   item.status_id === 4
  )
 awaitingReview = this.state.statuses.filter(item =>
-  item.status_id !== 3
+  item.status_id === 3
 )
 inProgress = this.state.statuses.filter(item =>
-  item.status_id !== 2
-)
-notStarted = this.state.statuses.filter(item =>
-  item.status_id !== 1
+  item.status_id === 2
 )
 
 render () {
