@@ -10,7 +10,14 @@ beforeEach(() => {
 
 afterEach(() => env.cleanup(testDb))
 
-test('submit assessments adds a new assessment to the table', () => {
+test('getAssessments function returns all assessments from the database', () => {
+  return db.getAssessments(testDb)
+    .then(assessments => {
+      expect(assessments.length).toBe(4)
+    })
+})
+
+test('submitAssessment adds a new assessment to the database', () => {
   const submission = {
     studentId: 'id',
     date_modified: new Date(),

@@ -23,3 +23,10 @@ test('createUser adds a new user', () => {
       expect(id).toBe(3)
     })
 })
+
+test('getUser returns an individual user', () => {
+  return db.getUser(1, testDb)
+    .then(users => {
+      expect(users.email).toBe('rose@gg.com')
+    })
+})
