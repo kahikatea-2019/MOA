@@ -1,6 +1,6 @@
 import nock from 'nock'
 
-import * as api from '../../client/api'
+import * as api from '../../../client/api/assessmentContent'
 
 test('getAssessments returns assessment data', () => {
   const scope = nock('http://localhost:3000')
