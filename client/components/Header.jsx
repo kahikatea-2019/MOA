@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class AddWidget extends React.Component {
+export default class Header extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
