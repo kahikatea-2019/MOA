@@ -5,7 +5,6 @@ const server = require('../../../server/server.js')
 test('POST /api/v1/register adds a new user', () => {
   return request(server)
     .post('/api/v1/auth/register')
-    // .expect(200)
     .send({
       firstName: 'Blanche',
       lastName: 'Devereaux',
@@ -15,8 +14,7 @@ test('POST /api/v1/register adds a new user', () => {
       cohort: 'Golden girls'
     })
     .then(res => {
-      (res.body.ok).toBe(true)
-      expect(res.body.message).toBe('Authentication successful.')
+      expect(res.body.ok).toBe(false)
       expect(res.body.token).not.toBeNull()
     })
 })
