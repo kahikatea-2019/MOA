@@ -1,6 +1,6 @@
 import React from 'react'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
+import Card from 'react-bootstrap/Card'
+import Accordion from 'react-bootstrap/Accordion'
 
 
 function getInitialData () {
@@ -61,23 +61,45 @@ export default class DropDownModule extends React.Component {
     return (
       <div>
       <br/>
-      <DropdownButton id="dropdown-basic-button" title="Module 1">
-        <Dropdown.Item href="/Evidence">{this.state.module[0].assessmentsTitle}</Dropdown.Item>
-      </DropdownButton>
-      <br />
-      <DropdownButton id="dropdown-basic-button" title="Module 2">
-        <Dropdown.Item href="/Evidence">{this.state.module[1].assessmentsTitle}</Dropdown.Item>
-      </DropdownButton>
-      <br/>
-      <DropdownButton id="dropdown-basic-button" title="Module 3">
-        <Dropdown.Item href="/Evidence">{this.state.module[2].assessmentsTitle}</Dropdown.Item>
-      </DropdownButton>
-      <br/>
-      <DropdownButton id="dropdown-basic-button" title="Module 4">
-        <Dropdown.Item href="/Evidence">{this.state.module[3].assessmentsTitle}</Dropdown.Item>
-      </DropdownButton>
-      <br/>
+
+<Accordion defaultActiveKey="0">
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="0">
+      Module 1
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body><a href="/Evidence">{this.state.module[0].assessmentsTitle}</a></Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="1">
+      Module 2
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body><a href="/Evidence">{this.state.module[1].assessmentsTitle}</a></Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="2">
+      Module 3
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="2">
+      <Card.Body><a href="/Evidence">{this.state.module[2].assessmentsTitle}</a></Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Accordion.Toggle as={Card.Header} eventKey="3">
+      Module 4
+    </Accordion.Toggle>
+    <Accordion.Collapse eventKey="3">
+      <Card.Body><a href="/Evidence">{this.state.module[3].assessmentsTitle}</a></Card.Body>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
+
     </div>
     )
   }
 }
+
+

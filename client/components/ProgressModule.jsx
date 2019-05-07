@@ -103,8 +103,6 @@ export default class ProgressModule extends React.Component {
       updatedProgress += mark
     })
 
-    console.log('Updated', updatedProgress)
-
     this.setState({
       moduleProgress: updatedProgress
     })
@@ -146,8 +144,6 @@ export default class ProgressModule extends React.Component {
               fill: '#3e98c7'
             }
           }}/>
-
-        {console.log(this.state.moduleProgress)}
       </React.Fragment>
     )
   }
