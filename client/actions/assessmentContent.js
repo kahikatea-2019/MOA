@@ -22,7 +22,6 @@ export function getAsmtContent () {
     getAssessments()
       .then(content => {
         dispatch(receiveAssessmentContent(content))
-        console.log(content)
       })
   }
 }
