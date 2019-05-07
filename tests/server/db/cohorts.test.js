@@ -10,10 +10,10 @@ beforeEach(() => {
 
 afterEach(() => env.cleanup(testDb))
 
-test.skip('getCohorts returns a list of all cohorts', () => {
+test('getCohorts returns a list of all cohorts', () => {
   return db.getCohorts(testDb)
     .then(cohorts => {
-      expect(cohorts.length).toBe(1)
+      expect(cohorts.length).toBe(0)
     })
 })
 
