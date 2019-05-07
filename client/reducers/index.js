@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import content from '../reducers/assessmentContent'
-import status from '../reducers/assessmentStatus'
+import content from './assessmentContent'
+import status from './assessmentStatus'
 
 export default combineReducers({
   content,
