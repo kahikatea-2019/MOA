@@ -25,7 +25,7 @@ export default class Login extends React.Component {
           value={this.state.email}
           onChange={this.handleChange} />
         <p>Password:</p>
-      <input name='password' type='password'
+        <input name='password' type='password'
           value={this.state.password}
           onChange={this.handleChange} />
         <button type='button' onClick={this.handleClick}>Login</button>
