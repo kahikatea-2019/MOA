@@ -1,0 +1,15 @@
+/* #app{
+  text-align: center
+} */
+
+/* #circularProgress {
+  width: 100px;
+} */
+
+.block-example {
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem;
+  background-color: black;
+  display: inline-block;
+}

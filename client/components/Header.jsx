@@ -14,9 +14,9 @@ export default class Header extends React.Component {
     const { name, surname, cohort } = this.state
     return (
       <React.Fragment>
-        <h1>{name}</h1>
+        <h2>{name}</h2>
         <h2>{surname}</h2>
-        <h3>{cohort}</h3>
+        <h5>{cohort}</h5>
       </React.Fragment>
     )
   }
