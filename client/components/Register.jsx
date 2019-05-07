@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 class Register extends React.Component {
 state = {
   firstName: '',
@@ -56,7 +56,7 @@ render () {
         </select>
       </label>
 
-      <button type='button' onClick={() => this.handleClick()}>Register</button>
+      <button type='button' onClick={() => this.handleClick()}><Link to ='/'>Register</Link></button>
     </div>
     </>
 
