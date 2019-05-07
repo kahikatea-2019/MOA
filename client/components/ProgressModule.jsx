@@ -1,4 +1,5 @@
 import React from 'react'
+import CircularProgressbar from 'react-circular-progressbar'
 
 export default class ProgressModule extends React.Component {
   constructor (props) {
@@ -15,28 +16,28 @@ export default class ProgressModule extends React.Component {
 
   // Replace the getter functions with relevant redux data integration
   getModule () { // event handler for onClick
-    return ({id: 1, title: 'Module 1: Core Programming'})
+    return ({ id: 1, title: 'Module 1: Core Programming' })
   }
 
   getAssesments (module_id) {
     return ([
-      {id: 1, module_id: 1, title: '1. Use Git and terminal commands to manage a code base', description: 'desc', link: 'link', week_day: 'weekday'},
-      {id: 2, module_id: 1, title: '2. Use npm to manage library dependencies', description: 'desc', link: 'link', week_day: 'weekday'},
-      {id: 3, module_id: 1, title: '3. Create well structured and tested code using JavaScript ES6', description: 'desc', link: 'link', week_day: 'weekday'},
-      {id: 4, module_id: 1, title: '4. Design, build and use a relational database to persist data', description: 'desc', link: 'link', week_day: 'weekday'},
-      {id: 5, module_id: 1, title: '5. Create code which reads and writes to the filesystem', description: 'desc', link: 'link', week_day: 'weekday'},
-      {id: 6, module_id: 1, title: '6. Build a Command Line Interface tool', description: 'desc', link: 'link', week_day: 'weekday'}
+      { id: 1, module_id: 1, title: '1. Use Git and terminal commands to manage a code base', description: 'desc', link: 'link', week_day: 'weekday' },
+      { id: 2, module_id: 1, title: '2. Use npm to manage library dependencies', description: 'desc', link: 'link', week_day: 'weekday' },
+      { id: 3, module_id: 1, title: '3. Create well structured and tested code using JavaScript ES6', description: 'desc', link: 'link', week_day: 'weekday' },
+      { id: 4, module_id: 1, title: '4. Design, build and use a relational database to persist data', description: 'desc', link: 'link', week_day: 'weekday' },
+      { id: 5, module_id: 1, title: '5. Create code which reads and writes to the filesystem', description: 'desc', link: 'link', week_day: 'weekday' },
+      { id: 6, module_id: 1, title: '6. Build a Command Line Interface tool', description: 'desc', link: 'link', week_day: 'weekday' }
     ])
   }
 
   getStudentsAssessments (assessment_id) {
     return ([
-      {id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: 'date'},
-      {id: 1, student_id: 1, assessment_id: 2, status_id: 3, evidence: 'evidence', date_modified: 'date'},
-      {id: 1, student_id: 1, assessment_id: 3, status_id: 2, evidence: 'evidence', date_modified: 'date'},
-      {id: 1, student_id: 1, assessment_id: 4, status_id: 1, evidence: 'evidence', date_modified: 'date'},
-      {id: 1, student_id: 1, assessment_id: 5, status_id: 2, evidence: 'evidence', date_modified: 'date'},
-      {id: 1, student_id: 1, assessment_id: 6, status_id: 1, evidence: 'evidence', date_modified: 'date'}
+      { id: 1, student_id: 1, assessment_id: 1, status_id: 4, evidence: 'evidence', date_modified: 'date' },
+      { id: 1, student_id: 1, assessment_id: 2, status_id: 3, evidence: 'evidence', date_modified: 'date' },
+      { id: 1, student_id: 1, assessment_id: 3, status_id: 2, evidence: 'evidence', date_modified: 'date' },
+      { id: 1, student_id: 1, assessment_id: 4, status_id: 1, evidence: 'evidence', date_modified: 'date' },
+      { id: 1, student_id: 1, assessment_id: 5, status_id: 2, evidence: 'evidence', date_modified: 'date' },
+      { id: 1, student_id: 1, assessment_id: 6, status_id: 1, evidence: 'evidence', date_modified: 'date' }
     ])
   }
 
@@ -110,10 +111,42 @@ export default class ProgressModule extends React.Component {
   }
 
   render () {
+    const percentage = Math.round(this.getProgress() * 100)
     return (
       <React.Fragment>
         <button onClick={() => this.calculateProgress()}>Calculate Progress</button>
-        <h3>Module progress: {Math.round(this.getProgress() * 100)} %</h3>
+        <CircularProgressbar percentage={percentage}
+          text={`${percentage}%`}
+          styles={{
+            // Customize the root svg element
+            root: {},
+            // Customize the path, i.e. the "completed progress"
+            path: {
+              // Path color
+              stroke: `rgba(62, 152, 199, ${percentage / 100})`,
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: 'butt',
+              // Customize transition animation
+              transition: 'stroke-dashoffset 0.5s ease 0s'
+            },
+            // Customize the circle behind the path, i.e. the "total progress"
+            trail: {
+              // Trail color
+              stroke: '#d6d6d6'
+            },
+            // Customize the text
+            text: {
+              // Text color
+              fill: '#f88',
+              // Text size
+              fontSize: '16px'
+            },
+            // Customize background - only used when the `background` prop is true
+            background: {
+              fill: '#3e98c7'
+            }
+          }}/>
+
         {console.log(this.state.moduleProgress)}
       </React.Fragment>
     )

@@ -16,3 +16,10 @@ test.skip('getCohorts returns a list of all cohorts', () => {
       expect(cohorts.length).toBe(1)
     })
 })
+
+test('getCohort returns an individual cohort', () => {
+  return db.getCohort(1, testDb)
+    .then(test => {
+      expect(test).toBe(undefined)
+    })
+})

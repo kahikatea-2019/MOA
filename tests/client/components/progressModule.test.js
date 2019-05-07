@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ProgressModule from '../client/components/ProgressModule'
-
+import ProgressModule from '../../../client/components/ProgressModule'
 
 // Prevent <ProgressModule> from calling the API
 ProgressModule.prototype.componentDidMount = () => {}
@@ -18,7 +17,7 @@ test('Testing if Initailising data', () => {
 
 test('Testing if Data is running and adding correctly', () => {
   // Act --> Arrange --> Assert
-  const initailState =  {
+  const initailState = {
     moduleComplete: false,
     moduleProgress: 0
   }
