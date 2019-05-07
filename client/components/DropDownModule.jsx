@@ -1,4 +1,6 @@
 import React from 'react'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 export default class DropDownModule extends React.Component {
   state = {
@@ -54,13 +56,35 @@ export default class DropDownModule extends React.Component {
       return <li key={assessment.exerciseTitle}>{assessment.exerciseTitle}</li>
     })
 
+    
     render () {
       return (
         <div>
-          <h3>Module Exercises</h3>
-          <ul>
-            {this.moduleExercises}
-          </ul>
+    
+            <DropdownButton id="dropdown-basic-button" title="Module 1">
+              <Dropdown.Item href="#/action-1">Something else 1 </Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
+            <br />
+            <DropdownButton id="dropdown-basic-button" title="Module 2">
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
+            <br/>
+            <DropdownButton id="dropdown-basic-button" title="Module 3">
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
+            <br/>
+            <DropdownButton id="dropdown-basic-button" title="Module 4">
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </DropdownButton>
+            <br/>
         </div>
       )
     }
