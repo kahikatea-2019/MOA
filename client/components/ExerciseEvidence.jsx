@@ -13,8 +13,13 @@ export default class ExerciseEvidence extends React.Component {
     const { exercisename, description } = this.state
     return (
       <React.Fragment>
-        <h1>{exercisename}</h1>
-        <h2>{description}</h2>
+        <div className='exerciseevidence'>
+          <h1>{exercisename}</h1>
+          <h2>{description}</h2>
+          <h3> Evidence of completion</h3>
+          <input type='text' name='url' placeholder= 'link a URL'/>
+          <button type='button'>Submit</button>
+        </div>
       </React.Fragment>
     )
   }
