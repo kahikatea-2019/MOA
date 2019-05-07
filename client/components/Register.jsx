@@ -5,7 +5,7 @@ class Register extends React.Component {
     firstName: '',
     lastName: '',
     password: '',
-    role: '',
+    role: 'student',
     email: ''
   }
 
@@ -49,7 +49,7 @@ class Register extends React.Component {
         />
 
         <label>
-          <select name='role' onChange={this.onChange}>
+          <select name='role' value={this.state.role} onChange={this.onChange}>
             <option value='facilitator'>Facilitator</option>
             <option value='student'>Student</option>
           </select>
