@@ -10,23 +10,8 @@ test('Test Runner is working', () => {
   expect(true).toBeTruthy()
 })
 
-test('Testing if Initailising data', () => {
+test('<ProgressModule> has className of progressCircle', () => {
   const wrapper = shallow(<ProgressModule />)
-  expect(wrapper.find('h3').text()).toBe('Module progress: 0 %')
-})
-
-test('Testing if Data is running and adding correctly', () => {
-  // Act --> Arrange --> Assert
-  const initailState = {
-    moduleComplete: false,
-    moduleProgress: 0
-  }
-
-  const wrapper = shallow(<ProgressModule />)
-
-  wrapper.setState(initailState)
-  wrapper.instance().calculateProgress()
-
-  // Assert
-  expect(wrapper.find('h3').text()).toBe('Module progress: 42 %')
+  const progressCircle = wrapper.find('.progressCircle')
+  expect(progressCircle.length).toBe(1)
 })

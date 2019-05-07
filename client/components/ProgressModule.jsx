@@ -4,7 +4,7 @@ import CircularProgressbar from 'react-circular-progressbar'
 export default function ProgressModule (props) {
   const { progress } = props
   return (
-    <div style={{ width: '200px' }}>
+    <div className='progressCircle' style={{ width: '200px' }}>
       <CircularProgressbar progress={progress}
         text={`${progress}%`}
         styles={{
