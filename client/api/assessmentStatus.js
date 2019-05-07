@@ -1,13 +1,18 @@
 import request from 'superagent'
+import { requestAssessmentStatus, receiveAssessmentStatus } from '../actions/assessmentStatus'
 
-export default function getAssessmentStatus (id) {
-  return request.get(`/status/students/${id}`)
-    .then(res => {
-      const statuses = res.body
-      return statuses
-    })
-    .catch(err => {
+export function getAssessmentStatus (id) {
+  return (dispatch) => {
+    dispatch(requestAssessmentStatus())
+    return request
+      .get(`/status/students/${id}`)
+      .then(res => {
+        const assessmentStatus = res.body
+        dispatch(receiveAssessmentStatus(assessmentStatus))
+      })
+      .catch(err => {
       // eslint-disable-next-line no-console
-      console.error(err)
-    })
+        console.error(err)
+      })
+  }
 }

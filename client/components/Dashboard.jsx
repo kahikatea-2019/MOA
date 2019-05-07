@@ -3,19 +3,19 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
-import { getAsmtContent } from '../actions/assessmentContent'
-import { getAssStatus } from '../actions/assessmentStatus'
+import { getAssessments } from '../api/assessmentContent'
+import { getAssessmentStatus } from '../api/assessmentStatus'
 
 import Header from './Header'
 import CohortProgress from './CohortProgress'
 import DropDownModule from './DropDownModule'
-import ProgressModule from './ProgressModule'
+import ProgressModuleList from './ProgressModuleList'
 
 class Dashboard extends React.Component {
   componentDidMount () {
     const id = 1 // to be updated
-    this.props.dispatch(getAsmtContent())
-    this.props.dispatch(getAssStatus(id))
+    this.props.dispatch(getAssessments())
+    this.props.dispatch(getAssessmentStatus(id))
   }
 
   render () {
@@ -26,8 +26,8 @@ class Dashboard extends React.Component {
         <Header />
         <CohortProgress progress={content}/>
         <Link to ='/' style={{ color: 'white' }}><Button variant="info" >Logout</Button></Link>
-        <DropDownModule />
-        <ProgressModule />
+        <DropDownModule assessments={content} studentAssessments={status}/>
+        <ProgressModuleList assessments={content} studentAssessments={status}/>
       </React.Fragment>
     )
   }

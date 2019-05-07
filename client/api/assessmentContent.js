@@ -1,14 +1,18 @@
 import request from 'superagent'
+import { requestAssessmentContent, receiveAssessmentContent } from '../actions/assessmentContent'
 
 export function getAssessments () {
-  return request
-    .get('/assessments')
-    .then(res => {
-      const assessments = res.body
-      return assessments
-    })
-    .catch(err => {
+  return (dispatch) => {
+    dispatch(requestAssessmentContent())
+    return request
+      .get('/assessments')
+      .then(res => {
+        const assessments = res.body
+        dispatch(receiveAssessmentContent(assessments))
+      })
+      .catch(err => {
       // eslint-disable-next-line no-console
-      console.error(err)
-    })
+        console.error(err)
+      })
+  }
 }
