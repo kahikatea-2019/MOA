@@ -14,5 +14,7 @@ test('getUserStatus returns the status for all assessments based on user', () =>
   return db.getUserStatus(1, testDb)
     .then(statuses => {
       expect(statuses.length).toBe(4)
+      expect(statuses[0].student_id).toBe(1)
     })
+    .catch(err => expect(err).toBeNull())
 })
