@@ -1,5 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+
 import { getAsmtContent } from '../actions/assessmentContent'
 import { getAssStatus } from '../actions/assessmentStatus'
 
@@ -22,6 +25,7 @@ class Dashboard extends React.Component {
       <React.Fragment>
         <Header />
         <CohortProgress progress={content}/>
+        <Link to ='/' style={{ color: 'white' }}><Button variant="info" >Logout</Button></Link>
         <DropDownModule />
         <ProgressModule />
       </React.Fragment>

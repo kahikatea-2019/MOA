@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 class Register extends React.Component {
   state = {
@@ -54,10 +56,9 @@ class Register extends React.Component {
             <option value='student'>Student</option>
           </select>
         </label>
-
-        <button type='button' onClick={() => this.handleClick()}>Register</button>
+        <Link to ='/' ><Button variant="info" type='button' onClick={() => this.handleClick()}>Register</Button></Link>
       </div>
-      </>
+    </>
 
     )
   }
