@@ -1,7 +1,7 @@
 import React from 'react'
 import CircularProgressbar from 'react-circular-progressbar'
 
-export default function progressModule (props) {
+export default function ProgressModule (props) {
   const { progress } = props
   return (
     <div style={{ width: '200px' }}>
@@ -29,7 +29,8 @@ export default function progressModule (props) {
             // Text color
             fill: '#f88',
             // Text size
-            fontSize: '16px'
+            fontSize: '16px',
+            textAlign: 'center'
           },
           // Customize background - only used when the `background` prop is true
           background: {
