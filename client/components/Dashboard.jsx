@@ -1,30 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { recieveAssessmentContent } from '../actions/AssessmentContent'
+import { getAsmtContent } from '../actions/assessmentContent'
 
 import Header from './Header'
 import CohortProgress from './CohortProgress'
 import DropDownModule from './DropDownModule'
 import ProgressModule from './ProgressModule'
 
-function Dashboard (props) {
-  const { dispatch } = props
+class Dashboard extends React.Component {
+  componentDidMount () {
+    this.props.dispatch(getAsmtContent())
+  }
 
-  dispatch(recieveAssessmentContent)
+  render () {
+    const { dispatch, content } = this.props
 
-  return (
-    <React.Fragment>
-      <Header />
-      <CohortProgress progress={props.progress}/>
-      <DropDownModule />
-      <ProgressModule />
-    </React.Fragment>
-  )
+    return (
+      <React.Fragment>
+        <Header />
+        <CohortProgress progress={content}/>
+        <DropDownModule />
+        <ProgressModule />
+      </React.Fragment>
+    )
+  }
 }
 
-mapStateToProps = {
-  newState: state.newState
-
+function mapStateToProps (state) {
+  return {
+    content: state.content
+  }
 }
 
 export default connect(mapStateToProps)(Dashboard)
