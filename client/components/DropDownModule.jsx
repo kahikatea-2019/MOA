@@ -62,29 +62,21 @@ export default class DropDownModule extends React.Component {
         <div>
     
             <DropdownButton id="dropdown-basic-button" title="Module 1">
-              <Dropdown.Item href="#/action-1">Something else 1 </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item href="#/action-1">{this.state.module[0].assessmentsTitle}</Dropdown.Item>
             </DropdownButton>
             <br />
             <DropdownButton id="dropdown-basic-button" title="Module 2">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item href="#/action-1">{this.state.module[1].assessmentsTitle}</Dropdown.Item>
             </DropdownButton>
             <br/>
             <DropdownButton id="dropdown-basic-button" title="Module 3">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item href="#/action-1">{this.state.module[2].assessmentsTitle}</Dropdown.Item>
             </DropdownButton>
             <br/>
             <DropdownButton id="dropdown-basic-button" title="Module 4">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item href="#/action-1">{this.state.module[3].assessmentsTitle}</Dropdown.Item>
             </DropdownButton>
-            <br/>
+            
         </div>
       )
     }
