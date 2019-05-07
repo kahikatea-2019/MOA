@@ -1,5 +1,4 @@
 import React from 'react'
-import ExerciseEvidence from './ExerciseEvidence'
 
 export default class DropDownModule extends React.Component {
   state = {
@@ -58,7 +57,6 @@ export default class DropDownModule extends React.Component {
     render () {
       return (
         <div>
-          <ExerciseEvidence />
           <h3>Module Exercises</h3>
           <ul>
             {this.moduleExercises}
