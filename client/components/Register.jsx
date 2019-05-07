@@ -26,30 +26,30 @@ class Register extends React.Component {
         <input name='firstName'
           placeholder='First Name'
           value={this.state.firstName}
-          onChange={e => this.onChange(e)}
+          onChange={this.onChange}
         />
 
         <input name='lastName'
           placeholder='Last Name'
           value={this.state.lastName}
-          onChange={e => this.onChange(e)}
+          onChange={this.onChange}
         />
 
         <input name='password'
           type='password'
           placeholder='Password'
           value={this.state.password}
-          onChange={e => this.onChange(e)}
+          onChange={this.onChange}
         />
 
         <input name='email'
           placeholder='Email'
           value={this.state.email}
-          onChange={e => this.onChange(e)}
+          onChange={this.onChange}
         />
 
         <label>
-          <select name='role' onChange={e => this.onChange(e)}>
+          <select name='role' onChange={this.onChange}>
             <option value='facilitator'>Facilitator</option>
             <option value='student'>Student</option>
           </select>
