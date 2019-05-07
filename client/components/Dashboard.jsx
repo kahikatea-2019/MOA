@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
-// import borderBlockStyle from 'react-bootstrap/borderBlockStyle'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 import Header from './Header'
 import CohortProgress from './CohortProgress'
@@ -39,8 +40,8 @@ export default class Dashboard extends React.Component {
             </Row>
             <DropDownModule />
           </Col>
+          <Link to ='/' style={{ color: 'white' }}><Button variant="info" >Logout</Button></Link>
         </Container>
-
       </React.Fragment>
     )
   }
