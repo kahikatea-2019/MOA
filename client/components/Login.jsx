@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 export default class Login extends React.Component {
   state = {
     email: '',
@@ -29,7 +30,7 @@ export default class Login extends React.Component {
           value={this.state.password}
           onChange={this.handleChange} />
         <br/>
-        <button type='button' onClick={() => this.handleClick()}><Link to ='/dashboard'>Login</Link></button>
+        <Link to ='/dashboard' ><Button variant="info" type='button' onClick={() => this.handleClick()} >Login</Button></Link>
         <br/>
         <Link to ='/register'><p>Don't have a login? Click here to register</p></Link>
       </React.Fragment>

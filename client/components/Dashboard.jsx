@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 import Header from './Header'
 import CohortProgress from './CohortProgress'
@@ -11,7 +12,7 @@ export default class Dashboard extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <button ><Link to ='/'>Logout</Link></button>
+        <Link to ='/' style={{ color: 'white' }}><Button variant="info" >Logout</Button></Link>
         <CohortProgress />
         <DropDownModule />
         <ProgressModule />
