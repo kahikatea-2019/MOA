@@ -2,50 +2,7 @@ import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
-export default class DropDownModule extends React.Component {
-  state = {
-    module: getInitialData()
-  }
 
-  render () {
-    return (
-      <div>
-        <h3>Module Exercises</h3>
-        <ul>
-          {this.state.module.map(assessment =>
-            <li key={assessment.exerciseTitle}>{assessment.exerciseTitle}</li>
-          )}
-        </ul>
-      </div>
-    )
-  }
-}
-
-<<<<<<< HEAD
-    
-    render () {
-      return (
-        <div>
-    
-            <DropdownButton id="dropdown-basic-button" title="Module 1">
-              <Dropdown.Item href="#/action-1">{this.state.module[0].assessmentsTitle}</Dropdown.Item>
-            </DropdownButton>
-            <br />
-            <DropdownButton id="dropdown-basic-button" title="Module 2">
-              <Dropdown.Item href="#/action-1">{this.state.module[1].assessmentsTitle}</Dropdown.Item>
-            </DropdownButton>
-            <br/>
-            <DropdownButton id="dropdown-basic-button" title="Module 3">
-              <Dropdown.Item href="#/action-1">{this.state.module[2].assessmentsTitle}</Dropdown.Item>
-            </DropdownButton>
-            <br/>
-            <DropdownButton id="dropdown-basic-button" title="Module 4">
-              <Dropdown.Item href="#/action-1">{this.state.module[3].assessmentsTitle}</Dropdown.Item>
-            </DropdownButton>
-            
-        </div>
-      )
-=======
 function getInitialData () {
   return [
     {
@@ -91,7 +48,36 @@ function getInitialData () {
       'week_day': 'weekday',
       'exerciseId': 24,
       'exerciseTitle': 'observation'
->>>>>>> 653b3f7143e7ce6cadf65f81e2de1cbd34bf46ae
     }
   ]
+}
+
+export default class DropDownModule extends React.Component {
+  state = {
+    module: getInitialData()
+  }
+
+  render () {
+    return (
+      <div>
+      <br/>
+      <DropdownButton id="dropdown-basic-button" title="Module 1">
+        <Dropdown.Item href="/Evidence">{this.state.module[0].assessmentsTitle}</Dropdown.Item>
+      </DropdownButton>
+      <br />
+      <DropdownButton id="dropdown-basic-button" title="Module 2">
+        <Dropdown.Item href="/Evidence">{this.state.module[1].assessmentsTitle}</Dropdown.Item>
+      </DropdownButton>
+      <br/>
+      <DropdownButton id="dropdown-basic-button" title="Module 3">
+        <Dropdown.Item href="/Evidence">{this.state.module[2].assessmentsTitle}</Dropdown.Item>
+      </DropdownButton>
+      <br/>
+      <DropdownButton id="dropdown-basic-button" title="Module 4">
+        <Dropdown.Item href="/Evidence">{this.state.module[3].assessmentsTitle}</Dropdown.Item>
+      </DropdownButton>
+      <br/>
+    </div>
+    )
+  }
 }
