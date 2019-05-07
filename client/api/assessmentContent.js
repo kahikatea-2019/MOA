@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { requestAssessmentContent, receiveAssessmentContent } from '../actions/assessmentContent'
 
-export default function getAssessments () {
+export function getAssessments () {
   return (dispatch) => {
     dispatch(requestAssessmentContent())
     return request
