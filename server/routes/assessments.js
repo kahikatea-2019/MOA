@@ -5,7 +5,6 @@ const db = require('../db/assessments')
 router.get('/', (req, res) => {
   db.getAssessments()
     .then(assessments => {
-      console.log('server:', assessments)
       res.json(assessments)
     })
     .catch(err => {
