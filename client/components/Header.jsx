@@ -17,8 +17,8 @@ export default class Header extends React.Component {
 
 function getInitialData () {
   return {
-    name: 'ete',
-    surname: 'surname',
-    cohort: 'cohort'
+    name: 'Jane',
+    surname: 'Doe',
+    cohort: 'Kahikatea 2019'
   }
 }
