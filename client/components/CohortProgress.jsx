@@ -30,7 +30,7 @@ export default class ProgressBar extends React.Component {
   render () {
     return (
       <>
-        <h3>Cohort Assessment Progress</h3>
+      <h6 style={{ textAlign: 'left' }}>Cohort Assessment Progress</h6>
         <BootStrapProgressBar>
           <BootStrapProgressBar
             striped
